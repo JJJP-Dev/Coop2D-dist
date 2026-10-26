@@ -1,0 +1,28 @@
+{
+  "announcements": [
+    {
+      "id": "bienvenida-1-191020261902",
+      "level": "info",
+      "title": "¡Bienvenido al playtest de Coop2D!",
+      "message": "Si algo falla, usa «Reportar un problema» en el menú ⋯.",
+      "url": "https://discord.gg/qwxxSMsT9Z",
+      "linkText": "Unirme al Discord",
+      "dismissible": true
+    }
+  ],
+
+  "blockedBuilds": [
+    { "match": "v0.0.2", "reason": "Tiene problemas de rendimiento con muchos NPC's." }
+  ],
+
+  "links": [
+    { "label": "Discord", "url": "https://discord.gg/qwxxSMsT9Z", "icon": "discord" }
+  ],
+
+  "hosting": {
+    "port": 7770,
+    "notes": "Abre el puerto UDP 7770 en tu router o usad Radmin VPN."
+  },
+
+  "bugReportWebhookUrl": "pw1:kLQ0Uhc-3w2F9PUteKXDmc0e5NysioDUdomULlWNZL5v_1ZlWz-_ZQTglBhRrLzug1VYsDl9KvujfLn_8Oph6LioNGuUDu9UiKQMJIFLiajXXI3UG6bl9nj_L9vfie7RNTzwYcdbKfeMEhTDn0XFd5fTs0a4kKWbhyM8DyO00jigHFqZonLO"
+}

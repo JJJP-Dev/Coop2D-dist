@@ -1,0 +1,161 @@
+{
+  "id": "pre3-0.0.5",
+  "title": "Misiones de la 0.0.5",
+  "intro": "La primera build del Pre 3: personajes, habilidades, mejoras y una partida de 10 minutos. Jugad solos y en grupo; lo que consigáis se marca solo, y lo hecho con trucos no cuenta.",
+  "minGameVersion": "0.0.5-prototype.3",
+  "startsUtc": "2026-10-24T00:00:00+01:00",
+  "endsUtc": "2026-11-08T23:59:00+00:00",
+  "missions": [
+    {
+      "id": "sobrevivir",
+      "title": "Sobrevivid a las 15 oleadas",
+      "hint": "Diez minutos de partida. Al morir el último enemigo sale «¡Habéis sobrevivido!».",
+      "goal": {
+        "event": "match_over",
+        "where": {
+          "result": "victory"
+        },
+        "scope": "match"
+      },
+      "check": "¿Se notó que la partida había terminado y por qué?"
+    },
+    {
+      "id": "nivel-10",
+      "title": "Llegad al nivel 10 en una partida",
+      "hint": "La experiencia es de todo el grupo: recoged los orbes.",
+      "goal": {
+        "event": "level_up",
+        "where": {
+          "level": {
+            ">=": 10
+          }
+        },
+        "scope": "match"
+      }
+    },
+    {
+      "id": "kit-completo",
+      "title": "Consigue las dos habilidades de tu kit",
+      "hint": "Salen aseguradas en los niveles 2 y 6, en la segunda fila de la oferta.",
+      "goal": {
+        "event": "skill_gained",
+        "where": {
+          "ability_level": 1
+        },
+        "count": 2,
+        "scope": "match"
+      }
+    },
+    {
+      "id": "habilidad-nivel-3",
+      "title": "Sube una habilidad a nivel 3",
+      "hint": "Los niveles salen en la primera fila de la oferta.",
+      "goal": {
+        "event": "skill_gained",
+        "where": {
+          "ability_level": 3
+        }
+      }
+    },
+    {
+      "id": "muro-o-bobina",
+      "title": "Usa el Muro ígneo o la Bobina 5 veces",
+      "hint": "Brasa y Voltio los consiguen en las ofertas. Se quedan en el suelo unos segundos.",
+      "goal": {
+        "event": "ability_cast",
+        "where": {
+          "ability": [
+            "ember_firewall",
+            "volt_coil"
+          ]
+        },
+        "count": 5,
+        "scope": "set"
+      },
+      "check": "¿Se veía cuánto tiempo le quedaba y cuándo golpeaba?"
+    },
+    {
+      "id": "duos",
+      "title": "Provocad 10 reacciones en dúo",
+      "hint": "Uno deja el aura (el muro, la torreta o la burbuja son ideales) y el otro la detona.",
+      "allowSolo": false,
+      "goal": {
+        "event": "reaction",
+        "where": {
+          "duo": true,
+          "me": [
+            "aura",
+            "detonator"
+          ]
+        },
+        "count": 10,
+        "scope": "set"
+      }
+    },
+    {
+      "id": "reanimar",
+      "title": "Reanima a un compañero",
+      "hint": "Quédate a su lado unos segundos. Si te golpean, dejas de ayudar un momento.",
+      "allowSolo": false,
+      "goal": {
+        "event": "player_revived",
+        "where": {
+          "by": "me"
+        }
+      }
+    },
+    {
+      "id": "entrar-tarde",
+      "title": "Únete a una partida ya empezada",
+      "hint": "Las oleadas se hacen más grandes al entrar más jugadores.",
+      "goal": {
+        "event": "match_joined",
+        "where": {
+          "role": "client",
+          "late": true
+        }
+      }
+    },
+    {
+      "id": "reroll-descarte",
+      "title": "Usa un reroll y un descarte",
+      "hint": "F vuelve a tirar la oferta; X y un número descarta una opción para toda la partida.",
+      "goal": {
+        "all": [
+          {
+            "event": "offer_action",
+            "where": {
+              "action": "reroll"
+            },
+            "scope": "set"
+          },
+          {
+            "event": "offer_action",
+            "where": {
+              "action": "banish"
+            },
+            "scope": "set"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leer-habilidades",
+      "title": "¿Distingues qué detona y de quién es cada habilidad?",
+      "hint": "Las que detonan tienen borde claro; las tuyas se ven más fuertes y cada una lleva el contorno del color de su jugador.",
+      "manual": true
+    },
+    {
+      "id": "avisos-habilidad",
+      "title": "¿Sabías qué tecla tenía cada habilidad nueva?",
+      "hint": "Al conseguir una habilidad o un nivel sale un aviso con lo que cambia y su tecla.",
+      "manual": true
+    },
+    {
+      "id": "anillo-alcance",
+      "title": "¿El anillo de alcance te ayuda a apuntar?",
+      "hint": "Aleja el cursor más allá de donde llegan Llovizna, Cortocircuito, el muro o la torreta.",
+      "manual": true
+    }
+  ]
+}
