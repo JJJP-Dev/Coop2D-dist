@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T21:38:47Z",
+  "generatedAt": "2026-10-27T01:25:30Z",
   "milestones": [
     {
       "number": 1,
@@ -28,11 +28,11 @@
       "title": "Pre 3 · First playable",
       "description": "Pre-producción.\n\nPregunta: ¿una partida entera, del inicio al jefe y a la pantalla de resultados, tiene ritmo?\n\nHecho cuando: se juega una partida completa de 10-15 minutos con arte provisional.\n\nAl cerrar: el bucle completo queda validado y la resolución base (#42) decidida.",
       "state": "open",
-      "open_issues": 19,
-      "closed_issues": 16,
+      "open_issues": 18,
+      "closed_issues": 17,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-26T09:18:44Z"
+      "updated_at": "2026-10-27T01:25:22Z"
     },
     {
       "number": 4,
