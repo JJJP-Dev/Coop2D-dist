@@ -1,7 +1,7 @@
 {
-  "id": "pre3-0.0.6",
+  "id": "pre3-0.0.6-final",
   "title": "Tu opinión sobre la 0.0.6 · Pre 3",
-  "intro": "Llega el primer jefe: el golem elemental. También hay pantalla de resultados y menú nuevo.\nCuéntanos si el golem es un reto justo, qué no se entendía y qué cambiarías.",
+  "intro": "El golem elemental, ahora con su escudo, sus fases y a por quién va a la vista, pausas para elegir mejoras y esquivar justo con ping.\nCuéntanos si se lee bien y qué cambiarías.",
   "askAfterSession": true,
   "minSessionMinutes": 10,
   "minHoursBetweenPrompts": 12,
@@ -47,6 +47,20 @@
       "maxLabel": "Muy difícil"
     },
     {
+      "id": "boss-readability",
+      "type": "multi",
+      "text": "¿Qué te ayudó a entender al golem?",
+      "hint": "Marca todo lo que viste y te sirvió.",
+      "options": [
+        "El círculo de su escudo",
+        "La onda y el parpadeo al cambiar de fase",
+        "La marca bajo los pies del jugador al que va",
+        "El anuncio del golem menor",
+        "La barra del jefe",
+        "Nada de esto"
+      ]
+    },
+    {
       "id": "boss-unclear",
       "type": "multi",
       "text": "Del golem, ¿qué te pareció injusto o difícil de entender?",
@@ -63,27 +77,26 @@
       ]
     },
     {
-      "id": "omen",
+      "id": "breaks",
       "type": "choice",
-      "text": "Hacia el minuto 4:45 sale un golem menor. ¿Te ayudó a preparar el jefe?",
+      "text": "Al limpiar una oleada sale «¡Oleada despejada!». ¿Te dio tiempo a elegir mejoras?",
       "options": [
-        "Sí, aprendí a romper su escudo",
-        "Un poco",
-        "No me di cuenta de que era un ensayo",
-        "No llegamos a verlo"
+        "Sí, en las pausas",
+        "A veces",
+        "No, casi siempre elegía con enemigos encima",
+        "No me fijé en el aviso"
       ]
     },
     {
-      "id": "results",
-      "type": "multi",
-      "text": "Al acabar salen los resultados. ¿Qué te pareció?",
-      "hint": "Marca todo lo que quieras.",
+      "id": "dodge-fair",
+      "type": "choice",
+      "text": "Al esquivar avisos y balas, ¿se sentía justo?",
+      "hint": "Sobre todo si jugabas con ping alto o por internet.",
       "options": [
-        "Los números cuadraban con lo que pasó",
-        "La mejor reacción tenía sentido",
-        "Me dieron ganas de jugar otra",
-        "Algo no cuadraba",
-        "No me fijé"
+        "Siempre",
+        "Casi siempre",
+        "A veces me daban golpes que había esquivado",
+        "A menudo me daban golpes que había esquivado"
       ]
     },
     {
@@ -97,19 +110,14 @@
       ]
     },
     {
-      "id": "menu",
-      "type": "multi",
-      "text": "Del menú nuevo, ¿qué te falló o te costó?",
-      "hint": "Marca todo lo que quieras.",
-      "options": [
-        "Unirme por IP",
-        "La ventana al unirme o cancelar",
-        "Las direcciones recientes",
-        "Las opciones de audio",
-        "Pantalla completa o tamaño de ventana",
-        "La pantalla de novedades",
-        "Todo fue bien"
-      ]
+      "id": "tide-balance",
+      "type": "scale",
+      "text": "Si jugaste con Marea o junto a ella, ¿cómo está ahora?",
+      "hint": "El 3 es lo justo. Si no la viste, déjala en blanco.",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Muy floja",
+      "maxLabel": "Muy fuerte"
     },
     {
       "id": "issues",
@@ -118,7 +126,6 @@
       "hint": "Marca todos los que quieras.",
       "options": [
         "Lag o desconexiones",
-        "Me dieron balas que había esquivado",
         "Entré con la partida empezada y algo se veía mal",
         "El juego se cerró",
         "Va lento o a tirones",
@@ -128,21 +135,11 @@
       ]
     },
     {
-      "id": "role",
-      "type": "choice",
-      "text": "¿Cómo jugaste?",
-      "hint": "Nos ayuda a cruzar tu respuesta con los registros del juego.",
-      "options": [
-        "Creé la partida (host)",
-        "Me uní a la partida de otro"
-      ]
-    },
-    {
       "id": "improve",
       "type": "text",
       "text": "¿Qué notaste raro o qué cambiarías?",
       "maxLength": 1000,
-      "placeholder": "Un ataque del golem, tu personaje, los resultados, algo del menú…"
+      "placeholder": "Un ataque del golem, tu personaje, las pausas, los resultados…"
     }
   ]
 }

@@ -1,160 +1,86 @@
 {
-  "id": "pre3-0.0.5",
-  "title": "Misiones de la 0.0.5",
-  "intro": "La primera build del Pre 3: personajes, habilidades, mejoras y una partida de 10 minutos. Jugad solos y en grupo; lo que consigáis se marca solo, y lo hecho con trucos no cuenta.",
-  "minGameVersion": "0.0.5-prototype.3",
-  "startsUtc": "2026-10-24T00:00:00+01:00",
-  "endsUtc": "2026-11-08T23:59:00+00:00",
+  // Misiones de la 0.0.6 oficial. Las de la Dev 1 no cuentan (minGameVersion).
+  "id": "pre3-0.0.6",
+  "title": "Misiones de la 0.0.6",
+  "intro": "Llega el golem elemental. Ganadle, aprended a leerlo y contadnos qué tal se esquiva. Lo que consigáis se marca solo; lo hecho con trucos no cuenta.",
+  "minGameVersion": "0.0.6",
+  "startsUtc": "2026-10-28T00:00:00+00:00",
+  "endsUtc": "2026-11-11T23:59:00+00:00",
+  // Webhook del canal de resultados de misiones. Pega aquí el valor ofuscado («pw1:…»), como en launcher.json.
+  // Mientras no sea válido, el launcher usa el webhook de feedback.json.
+  "discordWebhookUrl": "pw1:PEGA_AQUI_EL_WEBHOOK_OFUSCADO",
   "missions": [
     {
-      "id": "sobrevivir",
-      "title": "Sobrevivid a las 15 oleadas",
-      "hint": "Diez minutos de partida. Al morir el último enemigo sale «¡Habéis sobrevivido!».",
-      "goal": {
-        "event": "match_over",
-        "where": {
-          "result": "victory"
-        },
-        "scope": "match"
-      },
-      "check": "¿Se notó que la partida había terminado y por qué?"
+      "id": "vencer-golem",
+      "title": "Derrotad al golem elemental",
+      "hint": "Llega al despejar la última oleada. Romped su escudo con reacciones y pegadle mientras está aturdido.",
+      "goal": { "event": "boss_defeated", "where": { "boss": "golem" }, "scope": "match" },
+      "check": "¿Se notaba en qué fase estaba y cuándo tenía escudo?"
     },
     {
-      "id": "nivel-10",
-      "title": "Llegad al nivel 10 en una partida",
-      "hint": "La experiencia es de todo el grupo: recoged los orbes.",
-      "goal": {
-        "event": "level_up",
-        "where": {
-          "level": {
-            ">=": 10
-          }
-        },
-        "scope": "match"
-      }
+      "id": "golem-fase-3",
+      "title": "Llevad al golem a su fase de electricidad",
+      "hint": "Por debajo de un tercio de vida cambia por última vez. Es la fase más agresiva.",
+      "goal": { "event": "boss_phase", "where": { "boss": "golem", "phase": 3 } },
+      "check": "¿El cambio de fase se notaba en el propio golem?"
     },
     {
-      "id": "kit-completo",
-      "title": "Consigue las dos habilidades de tu kit",
-      "hint": "Salen aseguradas en los niveles 2 y 6, en la segunda fila de la oferta.",
-      "goal": {
-        "event": "skill_gained",
-        "where": {
-          "ability_level": 1
-        },
-        "count": 2,
-        "scope": "match"
-      }
+      "id": "golem-reaccion",
+      "title": "Rematad al golem con una reacción",
+      "hint": "El golpe final tiene que ser una reacción: guardad un aura para el final.",
+      "goal": { "event": "enemy_killed", "where": { "enemy": "golem", "source": "reaction" } }
     },
     {
-      "id": "habilidad-nivel-3",
-      "title": "Sube una habilidad a nivel 3",
-      "hint": "Los niveles salen en la primera fila de la oferta.",
-      "goal": {
-        "event": "skill_gained",
-        "where": {
-          "ability_level": 3
-        }
-      }
+      "id": "golem-menor",
+      "title": "Derrotad al golem menor",
+      "hint": "Sale hacia el minuto 4:45, con un anuncio en pantalla. Es el ensayo del jefe.",
+      "goal": { "event": "enemy_killed", "where": { "enemy": "lesser_golem" } },
+      "check": "¿Te ayudó a saber cómo romper el escudo del golem?"
     },
     {
-      "id": "muro-o-bobina",
-      "title": "Usa el Muro ígneo o la Bobina 5 veces",
-      "hint": "Brasa y Voltio los consiguen en las ofertas. Se quedan en el suelo unos segundos.",
-      "goal": {
-        "event": "ability_cast",
-        "where": {
-          "ability": [
-            "ember_firewall",
-            "volt_coil"
-          ]
-        },
-        "count": 5,
-        "scope": "set"
-      },
-      "check": "¿Se veía cuánto tiempo le quedaba y cuándo golpeaba?"
-    },
-    {
-      "id": "duos",
-      "title": "Provocad 10 reacciones en dúo",
-      "hint": "Uno deja el aura (el muro, la torreta o la burbuja son ideales) y el otro la detona.",
+      "id": "duos-golem",
+      "title": "Provocad 15 reacciones en dúo",
+      "hint": "Romper el escudo del golem es más rápido con dúos: uno deja el aura y el otro la detona.",
       "allowSolo": false,
-      "goal": {
-        "event": "reaction",
-        "where": {
-          "duo": true,
-          "me": [
-            "aura",
-            "detonator"
-          ]
-        },
-        "count": 10,
-        "scope": "set"
-      }
+      "goal": { "event": "reaction", "where": { "duo": true, "me": ["aura", "detonator"] }, "count": 15, "scope": "set" }
     },
     {
       "id": "reanimar",
       "title": "Reanima a un compañero",
-      "hint": "Quédate a su lado unos segundos. Si te golpean, dejas de ayudar un momento.",
+      "hint": "Quédate a su lado unos segundos. Contra el golem, buscad un momento en que no os apunte.",
       "allowSolo": false,
-      "goal": {
-        "event": "player_revived",
-        "where": {
-          "by": "me"
-        }
-      }
+      "goal": { "event": "player_revived", "where": { "by": "me" } }
     },
     {
-      "id": "entrar-tarde",
-      "title": "Únete a una partida ya empezada",
-      "hint": "Las oleadas se hacen más grandes al entrar más jugadores.",
-      "goal": {
-        "event": "match_joined",
-        "where": {
-          "role": "client",
-          "late": true
-        }
-      }
+      "id": "burbuja",
+      "title": "Usa la Burbuja prisión 10 veces",
+      "hint": "Marea la consigue en las ofertas. Al estallar atrapa a todos los que pilla.",
+      "goal": { "event": "ability_cast", "where": { "ability": "tide_bubble" }, "count": 10, "scope": "set" },
+      "check": "¿Marea se siente justa ahora, ni floja ni demasiado fuerte?"
     },
     {
-      "id": "reroll-descarte",
-      "title": "Usa un reroll y un descarte",
-      "hint": "F vuelve a tirar la oferta; X y un número descarta una opción para toda la partida.",
-      "goal": {
-        "all": [
-          {
-            "event": "offer_action",
-            "where": {
-              "action": "reroll"
-            },
-            "scope": "set"
-          },
-          {
-            "event": "offer_action",
-            "where": {
-              "action": "banish"
-            },
-            "scope": "set"
-          }
-        ]
-      }
+      "id": "internet",
+      "title": "Únete a una partida por internet o VPN",
+      "hint": "Con la IP pública del host o con Radmin VPN. Es donde más se nota el ping.",
+      "goal": { "event": "join_result", "where": { "result": "ok", "target": ["public", "vpn"] } },
+      "check": "¿Esquivar se sentía justo, sin golpes que en tu pantalla habías esquivado?"
     },
     {
-      "id": "leer-habilidades",
-      "title": "¿Distingues qué detona y de quién es cada habilidad?",
-      "hint": "Las que detonan tienen borde claro; las tuyas se ven más fuertes y cada una lleva el contorno del color de su jugador.",
+      "id": "marca",
+      "title": "¿Sabías a por quién iba el golem?",
+      "hint": "Al saltar, al lanzar rocas o en la tormenta, un círculo bajo los pies marca al jugador al que va.",
       "manual": true
     },
     {
-      "id": "avisos-habilidad",
-      "title": "¿Sabías qué tecla tenía cada habilidad nueva?",
-      "hint": "Al conseguir una habilidad o un nivel sale un aviso con lo que cambia y su tecla.",
+      "id": "pausas",
+      "title": "¿Te dio tiempo a elegir mejoras en las pausas?",
+      "hint": "Al limpiar una oleada sale «¡Oleada despejada!» con al menos 10 s de descanso.",
       "manual": true
     },
     {
-      "id": "anillo-alcance",
-      "title": "¿El anillo de alcance te ayuda a apuntar?",
-      "hint": "Aleja el cursor más allá de donde llegan Llovizna, Cortocircuito, el muro o la torreta.",
+      "id": "discord",
+      "title": "¿Salía tu partida en Discord?",
+      "hint": "Con Discord abierto, tu perfil enseña si hospedas o te has unido, cuántos sois y cuánto lleváis.",
       "manual": true
     }
   ]

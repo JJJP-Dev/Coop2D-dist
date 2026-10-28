@@ -1,6 +1,16 @@
 {
   "announcements": [
     {
+      "id": "build-0.0.6",
+      "level": "info",
+      "title": "¡Ya está la 0.0.6! Llega el golem elemental",
+      "message": "El primer jefe, con tres fases y un escudo en cada una. Además: resultados al acabar, pausas para elegir mejoras, esquivar justo con ping y menú nuevo. Actualiza en Inicio y mirad las misiones de esta versión.",
+      "url": "https://discord.gg/qwxxSMsT9Z",
+      "linkText": "Contadlo en Discord",
+      "endsUtc": "2026-11-11T23:59:00+00:00",
+      "dismissible": true
+    },
+    {
       "id": "bienvenida-1-191020261902",
       "level": "info",
       "title": "¡Bienvenido al playtest de Coop2D!",
