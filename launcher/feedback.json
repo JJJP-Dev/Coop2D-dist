@@ -1,7 +1,7 @@
 {
-  "id": "pre3-0.0.5",
-  "title": "Tu opinión sobre la 0.0.5 · Pre 3",
-  "intro": "La primera build del Pre 3: personajes con sus habilidades, mejoras y una partida de 10 minutos con final.\nCuéntanos qué se entendía, qué se hizo largo y qué te gustó.",
+  "id": "pre3-0.0.6",
+  "title": "Tu opinión sobre la 0.0.6 · Pre 3",
+  "intro": "Llega el primer jefe: el golem elemental. También hay pantalla de resultados y menú nuevo.\nCuéntanos si el golem es un reto justo, qué no se entendía y qué cambiarías.",
   "askAfterSession": true,
   "minSessionMinutes": 10,
   "minHoursBetweenPrompts": 12,
@@ -14,15 +14,14 @@
       "required": true
     },
     {
-      "id": "how-ended",
+      "id": "how-ended-boss",
       "type": "choice",
       "text": "¿Cómo acabó tu última partida?",
       "required": true,
       "options": [
-        "¡Sobrevivimos a las 15 oleadas!",
-        "Caímos antes del minuto 3",
-        "Caímos entre el 3 y el 7",
-        "Caímos después del 7",
+        "¡Ganamos al golem!",
+        "Caímos contra el golem",
+        "Caímos antes de que llegara el golem",
         "No la terminamos"
       ]
     },
@@ -38,23 +37,54 @@
       ]
     },
     {
-      "id": "match-length",
+      "id": "boss-difficulty",
       "type": "scale",
-      "text": "La partida dura unos 10 minutos. ¿Cómo se te hizo?",
-      "min": 1,
-      "max": 5,
-      "minLabel": "Muy corta",
-      "maxLabel": "Muy larga"
-    },
-    {
-      "id": "difficulty",
-      "type": "scale",
-      "text": "¿Qué tal la dificultad?",
-      "hint": "El 3 es lo justo.",
+      "text": "¿Qué tal la dificultad del golem?",
+      "hint": "El 3 es un reto justo. Si no llegasteis, déjala en blanco.",
       "min": 1,
       "max": 5,
       "minLabel": "Muy fácil",
       "maxLabel": "Muy difícil"
+    },
+    {
+      "id": "boss-unclear",
+      "type": "multi",
+      "text": "Del golem, ¿qué te pareció injusto o difícil de entender?",
+      "hint": "Marca todo lo que quieras.",
+      "options": [
+        "El salto y el suelo que quema",
+        "El abanico de rocas",
+        "La tormenta (la última fase)",
+        "Los slimes que llama",
+        "Cómo romper su escudo",
+        "No sabía a por quién iba",
+        "Golpes imposibles de esquivar",
+        "Todo se entendía bien"
+      ]
+    },
+    {
+      "id": "omen",
+      "type": "choice",
+      "text": "Hacia el minuto 4:45 sale un golem menor. ¿Te ayudó a preparar el jefe?",
+      "options": [
+        "Sí, aprendí a romper su escudo",
+        "Un poco",
+        "No me di cuenta de que era un ensayo",
+        "No llegamos a verlo"
+      ]
+    },
+    {
+      "id": "results",
+      "type": "multi",
+      "text": "Al acabar salen los resultados. ¿Qué te pareció?",
+      "hint": "Marca todo lo que quieras.",
+      "options": [
+        "Los números cuadraban con lo que pasó",
+        "La mejor reacción tenía sentido",
+        "Me dieron ganas de jugar otra",
+        "Algo no cuadraba",
+        "No me fijé"
+      ]
     },
     {
       "id": "character",
@@ -67,46 +97,18 @@
       ]
     },
     {
-      "id": "favorite-skill",
-      "type": "choice",
-      "text": "¿Qué habilidad te gustó más?",
-      "options": [
-        "Llamarada",
-        "Muro ígneo",
-        "Llovizna",
-        "Ola",
-        "Burbuja prisión",
-        "Chispa",
-        "Rayo",
-        "Bobina",
-        "Cortocircuito",
-        "No me fijé"
-      ]
-    },
-    {
-      "id": "readability",
+      "id": "menu",
       "type": "multi",
-      "text": "En medio de la pelea, ¿qué se entendía bien?",
-      "hint": "Marca todo lo que se veía claro.",
+      "text": "Del menú nuevo, ¿qué te falló o te costó?",
+      "hint": "Marca todo lo que quieras.",
       "options": [
-        "De quién era cada habilidad",
-        "Cuáles provocan reacciones",
-        "Cuánto le queda al muro o la torreta",
-        "Hasta dónde llega una habilidad",
-        "Qué enemigos están aturdidos",
-        "La tecla de cada habilidad nueva",
-        "Ninguna"
-      ]
-    },
-    {
-      "id": "offers",
-      "type": "choice",
-      "text": "¿Las ofertas al subir de nivel te hacían pensar qué elegir?",
-      "options": [
-        "Casi siempre",
-        "A veces",
-        "Casi nunca: elegía cualquiera",
-        "Al final solo salía Respiro"
+        "Unirme por IP",
+        "La ventana al unirme o cancelar",
+        "Las direcciones recientes",
+        "Las opciones de audio",
+        "Pantalla completa o tamaño de ventana",
+        "La pantalla de novedades",
+        "Todo fue bien"
       ]
     },
     {
@@ -116,11 +118,12 @@
       "hint": "Marca todos los que quieras.",
       "options": [
         "Lag o desconexiones",
+        "Me dieron balas que había esquivado",
+        "Entré con la partida empezada y algo se veía mal",
         "El juego se cerró",
         "Va lento o a tirones",
         "Fallos visuales",
         "Algo no se entendía",
-        "Controles incómodos",
         "Ninguno"
       ]
     },
@@ -139,7 +142,7 @@
       "type": "text",
       "text": "¿Qué notaste raro o qué cambiarías?",
       "maxLength": 1000,
-      "placeholder": "Una habilidad que no se entendía, un momento en que todo se complicó, lo que echaste de menos…"
+      "placeholder": "Un ataque del golem, tu personaje, los resultados, algo del menú…"
     }
   ]
 }
