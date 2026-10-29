@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T19:22:50Z",
+  "generatedAt": "2026-10-29T05:39:04Z",
   "milestones": [
     {
       "number": 1,
@@ -50,11 +50,11 @@
       "title": "0.1 · Runs and rooms",
       "description": "Producción.\n\nObjetivo: partidas formadas por salas con orden por semilla, rangos de enemigos y más variedad (enemigos, habilidades, cuarto personaje).\n\nHecho cuando: una partida recorre varias salas generadas por semilla y la misma semilla repite el mismo recorrido.",
       "state": "open",
-      "open_issues": 16,
+      "open_issues": 17,
       "closed_issues": 0,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-25T16:58:20Z"
+      "updated_at": "2026-10-29T05:38:54Z"
     },
     {
       "number": 6,
