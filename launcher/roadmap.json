@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T08:43:21Z",
+  "generatedAt": "2026-10-30T19:14:58Z",
   "milestones": [
     {
       "number": 1,
@@ -28,22 +28,22 @@
       "title": "Pre 3 · First playable",
       "description": "Pre-producción.\n\nPregunta: ¿una partida entera, del inicio al jefe y a la pantalla de resultados, tiene ritmo?\n\nHecho cuando: se juega una partida completa de 10-15 minutos con arte provisional.\n\nAl cerrar: el bucle completo queda validado y la resolución base (#42) decidida.",
       "state": "open",
-      "open_issues": 14,
-      "closed_issues": 22,
+      "open_issues": 13,
+      "closed_issues": 23,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-29T18:26:36Z"
+      "updated_at": "2026-10-30T19:14:48Z"
     },
     {
       "number": 4,
       "title": "Pre 4 · Vertical slice",
       "description": "Pre-producción.\n\nPregunta: ¿así se verá y se sentirá el juego terminado, y podemos llegar a esa calidad a nuestro ritmo?\n\nHecho cuando: la primera prueba con gente de fuera (#121) da buenas notas.\n\nAl cerrar: decisión de entrar en producción y de su alcance.",
       "state": "open",
-      "open_issues": 35,
-      "closed_issues": 2,
+      "open_issues": 34,
+      "closed_issues": 3,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-30T08:43:16Z"
+      "updated_at": "2026-10-30T19:14:50Z"
     },
     {
       "number": 5,
