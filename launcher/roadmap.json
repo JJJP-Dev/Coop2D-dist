@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T04:24:07Z",
+  "generatedAt": "2026-10-30T08:43:21Z",
   "milestones": [
     {
       "number": 1,
@@ -39,22 +39,22 @@
       "title": "Pre 4 · Vertical slice",
       "description": "Pre-producción.\n\nPregunta: ¿así se verá y se sentirá el juego terminado, y podemos llegar a esa calidad a nuestro ritmo?\n\nHecho cuando: la primera prueba con gente de fuera (#121) da buenas notas.\n\nAl cerrar: decisión de entrar en producción y de su alcance.",
       "state": "open",
-      "open_issues": 29,
+      "open_issues": 35,
       "closed_issues": 2,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-30T04:23:58Z"
+      "updated_at": "2026-10-30T08:43:16Z"
     },
     {
       "number": 5,
       "title": "0.1 · Runs and rooms",
       "description": "Producción.\n\nObjetivo: partidas formadas por salas con orden por semilla, rangos de enemigos y más variedad (enemigos, habilidades, cuarto personaje).\n\nHecho cuando: una partida recorre varias salas generadas por semilla y la misma semilla repite el mismo recorrido.",
       "state": "open",
-      "open_issues": 17,
+      "open_issues": 18,
       "closed_issues": 0,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-29T05:38:54Z"
+      "updated_at": "2026-10-30T08:43:17Z"
     },
     {
       "number": 6,
