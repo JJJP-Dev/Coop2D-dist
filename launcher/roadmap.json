@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T18:26:50Z",
+  "generatedAt": "2026-10-30T04:24:07Z",
   "milestones": [
     {
       "number": 1,
@@ -39,11 +39,11 @@
       "title": "Pre 4 · Vertical slice",
       "description": "Pre-producción.\n\nPregunta: ¿así se verá y se sentirá el juego terminado, y podemos llegar a esa calidad a nuestro ritmo?\n\nHecho cuando: la primera prueba con gente de fuera (#121) da buenas notas.\n\nAl cerrar: decisión de entrar en producción y de su alcance.",
       "state": "open",
-      "open_issues": 30,
-      "closed_issues": 1,
+      "open_issues": 29,
+      "closed_issues": 2,
       "due_on": null,
       "closed_at": null,
-      "updated_at": "2026-10-28T18:24:23Z"
+      "updated_at": "2026-10-30T04:23:58Z"
     },
     {
       "number": 5,
