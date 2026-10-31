@@ -1,7 +1,7 @@
 {
-  "id": "pre3-0.0.6-final",
-  "title": "Tu opinión sobre la 0.0.6 · Pre 3",
-  "intro": "El golem elemental, ahora con su escudo, sus fases y a por quién va a la vista, pausas para elegir mejoras y esquivar justo con ping.\nCuéntanos si se lee bien y qué cambiarías.",
+  "id": "pre3-0.0.7",
+  "title": "Tu opinión sobre la 0.0.7 · Personajes con identidad",
+  "intro": "Cada personaje tiene ahora su pasiva, su núcleo y sus mejoras propias, y se elige en la sala. Cuéntanos si se nota, si se entiende y qué cambiarías: con lo que digáis ajustamos la siguiente.",
   "askAfterSession": true,
   "minSessionMinutes": 10,
   "minHoursBetweenPrompts": 12,
@@ -37,43 +37,258 @@
       ]
     },
     {
-      "id": "boss-difficulty",
-      "type": "scale",
-      "text": "¿Qué tal la dificultad del golem?",
-      "hint": "El 3 es un reto justo. Si no llegasteis, déjala en blanco.",
-      "min": 1,
-      "max": 5,
-      "minLabel": "Muy fácil",
-      "maxLabel": "Muy difícil"
-    },
-    {
-      "id": "boss-readability",
-      "type": "multi",
-      "text": "¿Qué te ayudó a entender al golem?",
-      "hint": "Marca todo lo que viste y te sirvió.",
+      "id": "character",
+      "type": "choice",
+      "text": "¿Con qué personaje jugaste más?",
       "options": [
-        "El círculo de su escudo",
-        "La onda y el parpadeo al cambiar de fase",
-        "La marca bajo los pies del jugador al que va",
-        "El anuncio del golem menor",
-        "La barra del jefe",
-        "Nada de esto"
+        "Brasa (fuego)",
+        "Marea (agua)",
+        "Voltio (electricidad)",
+        "Fui cambiando"
       ]
     },
     {
-      "id": "boss-unclear",
+      "id": "lobby",
       "type": "multi",
-      "text": "Del golem, ¿qué te pareció injusto o difícil de entender?",
+      "text": "En la sala de espera, ¿qué te sirvió?",
+      "hint": "Marca todo lo que usaste.",
+      "options": [
+        "Ver la ficha del personaje antes de elegir",
+        "Saber quién llevaba cada personaje",
+        "Pulsar el nombre del núcleo para leer su ficha",
+        "Poder repetir personaje",
+        "Nada, elegí sin mirar"
+      ]
+    },
+    {
+      "id": "character-different",
+      "type": "scale",
+      "text": "¿Se notaba la diferencia entre jugar con un personaje u otro?",
+      "hint": "Por su pasiva, su núcleo y sus mejoras.",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Todos iguales",
+      "maxLabel": "Muy distintos"
+    },
+    {
+      "id": "passive-understood",
+      "type": "choice",
+      "text": "¿Entendiste qué hacía la pasiva de tu personaje?",
+      "hint": "Contagio (Brasa), Oleaje (Marea) o Conductor (Voltio). Está a la izquierda de tus habilidades.",
+      "options": [
+        "Sí, y la notaba en partida",
+        "La entendí, pero no la notaba",
+        "La leí, pero no la entendí",
+        "No sabía que tenía una"
+      ]
+    },
+    {
+      "id": "core-used",
+      "type": "choice",
+      "text": "¿Cuántas veces usaste tu núcleo por partida, más o menos?",
+      "hint": "Ignición (Brasa), Gran Ola (Marea) o Descarga (Voltio): el medidor a la derecha de tus habilidades.",
+      "options": [
+        "Ninguna",
+        "1 o 2",
+        "De 3 a 6",
+        "De 7 a 12",
+        "Más de 12",
+        "No sé qué es el núcleo"
+      ]
+    },
+    {
+      "id": "core-understood",
+      "type": "multi",
+      "text": "Del núcleo, ¿qué entendiste?",
+      "hint": "Marca todo lo que tengas claro.",
+      "options": [
+        "Cómo se llena",
+        "Cuándo está listo",
+        "Qué hace al usarlo",
+        "Que se veía cuando lo usaba otro",
+        "Nada de lo anterior"
+      ]
+    },
+    {
+      "id": "core-feel",
+      "type": "scale",
+      "text": "Al usar tu núcleo, ¿se sentía como un gran momento?",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Ni lo noté",
+      "maxLabel": "¡Mucho!"
+    },
+    {
+      "id": "core-fill-speed",
+      "type": "choice",
+      "text": "¿A qué ritmo se llenaba tu núcleo?",
+      "options": [
+        "Demasiado lento",
+        "Algo lento",
+        "Bien",
+        "Algo rápido",
+        "Demasiado rápido"
+      ]
+    },
+    {
+      "id": "core-best",
+      "type": "choice",
+      "text": "¿Qué núcleo te pareció más divertido de usar?",
+      "hint": "Aunque fuera de un compañero.",
+      "options": [
+        "Ignición (Brasa)",
+        "Gran Ola (Marea)",
+        "Descarga (Voltio)",
+        "No vi ninguno"
+      ]
+    },
+    {
+      "id": "embers",
+      "type": "choice",
+      "text": "Si jugaste con Brasa o con ella: ¿se notaban las ascuas (su fuego cargado que hace más daño al detonarlo)?",
+      "hint": "Salen como «+1», «+2», «+3» en naranja bajo el enemigo, desde el segundo golpe de Brasa.",
+      "options": [
+        "Sí, y las buscábamos",
+        "Las vi, pero no cambiaban nada",
+        "No las vi",
+        "No jugué con Brasa"
+      ]
+    },
+    {
+      "id": "char-upgrades",
+      "type": "multi",
+      "text": "¿Qué mejoras de personaje cogiste?",
+      "hint": "Marca las que recuerdes.",
+      "options": [
+        "Llama eterna",
+        "Muro vivo",
+        "Corazón de marea",
+        "Remolino",
+        "Sobretensión",
+        "Bobina detonante",
+        "Ninguna, no me salieron"
+      ]
+    },
+    {
+      "id": "char-upgrades-impact",
+      "type": "scale",
+      "text": "¿Cambiaron tu forma de jugar las mejoras de tu personaje?",
+      "hint": "Si no cogiste ninguna, déjala en blanco.",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Nada",
+      "maxLabel": "Muchísimo"
+    },
+    {
+      "id": "upgrade-favorite",
+      "type": "text",
+      "text": "¿Qué mejora te gustó más, y cuál te pareció inútil?",
+      "maxLength": 300,
+      "placeholder": "Remolino me encantó; Sobretensión no se notaba…"
+    },
+    {
+      "id": "texts-clear",
+      "type": "scale",
+      "text": "¿Se entendían las descripciones (mejoras, habilidades, pasiva y núcleo)?",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Nada claras",
+      "maxLabel": "Muy claras"
+    },
+    {
+      "id": "texts-confusing",
+      "type": "multi",
+      "text": "¿Qué textos te costó entender?",
       "hint": "Marca todo lo que quieras.",
       "options": [
-        "El salto y el suelo que quema",
-        "El abanico de rocas",
-        "La tormenta (la última fase)",
-        "Los slimes que llama",
-        "Cómo romper su escudo",
-        "No sabía a por quién iba",
-        "Golpes imposibles de esquivar",
-        "Todo se entendía bien"
+        "Las mejoras de las ofertas",
+        "Las habilidades",
+        "La pasiva",
+        "El núcleo",
+        "Las palabras como «aura», «detonar» o «reacción»",
+        "La ficha de la sala",
+        "Ninguno"
+      ]
+    },
+    {
+      "id": "tooltips",
+      "type": "choice",
+      "text": "Al pasar el ratón por tu pasiva, una habilidad o el núcleo sale una ficha breve. ¿La usaste?",
+      "options": [
+        "Sí, y me sirvió",
+        "Sí, pero no aclaraba",
+        "No sabía que existía",
+        "No la necesité"
+      ]
+    },
+    {
+      "id": "auras-readable",
+      "type": "choice",
+      "text": "Debajo de cada enemigo se ve su aura: un bloque de color si es fuerte, solo el nombre si es débil, las ascuas como «+2» y «¡ATURDIDO!» cuando no se mueve. ¿Se leía bien?",
+      "options": [
+        "Sí, de un vistazo",
+        "Más o menos, los enemigos son pequeños",
+        "No me fijaba",
+        "No lo entendía"
+      ]
+    },
+    {
+      "id": "pause-menu",
+      "type": "choice",
+      "text": "¿Usaste el menú de pausa (Esc)?",
+      "hint": "Jugando solo para la partida; en grupo, solo cuando la abrís todos. Enseña tu build, el grupo y cómo salir.",
+      "options": [
+        "Sí, para parar la partida",
+        "Sí, para ver mi build",
+        "Sí, solo para salir",
+        "No lo usé",
+        "No sabía que existía"
+      ]
+    },
+    {
+      "id": "pause-group",
+      "type": "choice",
+      "text": "Si jugabais en grupo: ¿quedaba claro cuándo se paraba la partida y a quién esperaba?",
+      "hint": "El menú dice «Partida parada» o «falta que pausen J2».",
+      "options": [
+        "Sí, se entendía",
+        "Me costó entenderlo",
+        "Preferiría que se parara al abrirla cualquiera",
+        "Jugué solo o no pausé"
+      ]
+    },
+    {
+      "id": "combo",
+      "type": "choice",
+      "text": "¿Llegasteis a encadenar núcleos entre varios (por ejemplo, Gran Ola y justo después Descarga)?",
+      "options": [
+        "Sí, y fue lo mejor de la partida",
+        "Sí, pero sin buscarlo",
+        "Lo intentamos y no salió",
+        "No lo intentamos o jugué solo"
+      ]
+    },
+    {
+      "id": "slimes",
+      "type": "choice",
+      "text": "Ahora salen slimes de fuego, agua y electricidad. ¿Qué te parecieron?",
+      "hint": "Llevan su propio elemento: puedes provocarles una reacción tú solo.",
+      "options": [
+        "Me gustaron, dan juego",
+        "Bien, pero apenas cambian nada",
+        "Molestan o confunden",
+        "No me fijé"
+      ]
+    },
+    {
+      "id": "early-pace",
+      "type": "choice",
+      "text": "Las primeras oleadas ahora no tienen pausa. ¿Qué tal el comienzo?",
+      "options": [
+        "Ágil, bien",
+        "Demasiado rápido",
+        "Todavía lento",
+        "No me fijé"
       ]
     },
     {
@@ -85,6 +300,32 @@
         "A veces",
         "No, casi siempre elegía con enemigos encima",
         "No me fijé en el aviso"
+      ]
+    },
+    {
+      "id": "boss-difficulty",
+      "type": "scale",
+      "text": "¿Qué tal la dificultad del golem?",
+      "hint": "El 3 es un reto justo. Si no llegasteis, déjala en blanco.",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Muy fácil",
+      "maxLabel": "Muy difícil"
+    },
+    {
+      "id": "balance",
+      "type": "multi",
+      "text": "¿Algo te pareció demasiado fuerte o demasiado flojo?",
+      "hint": "Marca todo lo que quieras.",
+      "options": [
+        "Brasa, demasiado fuerte",
+        "Brasa, floja",
+        "Marea, demasiado fuerte",
+        "Marea, floja",
+        "Voltio, demasiado fuerte",
+        "Voltio, floja",
+        "Algún núcleo, demasiado fuerte",
+        "Todo equilibrado"
       ]
     },
     {
@@ -100,24 +341,18 @@
       ]
     },
     {
-      "id": "character",
-      "type": "choice",
-      "text": "¿Con qué personaje jugaste más?",
+      "id": "visual",
+      "type": "multi",
+      "text": "¿Algo se veía mal o raro?",
+      "hint": "Los tamaños del jefe y de algunos dibujos aún se están ajustando.",
       "options": [
-        "Brasa (fuego)",
-        "Marea (agua)",
-        "Voltio (electricidad)"
+        "Tamaños de personajes o enemigos",
+        "Balas o rocas",
+        "La barra de habilidades o el núcleo",
+        "La sala de espera",
+        "Las fichas que se abren",
+        "Nada"
       ]
-    },
-    {
-      "id": "tide-balance",
-      "type": "scale",
-      "text": "Si jugaste con Marea o junto a ella, ¿cómo está ahora?",
-      "hint": "El 3 es lo justo. Si no la viste, déjala en blanco.",
-      "min": 1,
-      "max": 5,
-      "minLabel": "Muy floja",
-      "maxLabel": "Muy fuerte"
     },
     {
       "id": "issues",
@@ -127,19 +362,29 @@
       "options": [
         "Lag o desconexiones",
         "Entré con la partida empezada y algo se veía mal",
+        "No podía lanzar habilidades con el ratón sobre la barra",
         "El juego se cerró",
         "Va lento o a tirones",
-        "Fallos visuales",
-        "Algo no se entendía",
+        "Algo no hacía lo que decía su descripción",
+        "El menú de pausa o el botón de salir",
         "Ninguno"
       ]
+    },
+    {
+      "id": "again",
+      "type": "scale",
+      "text": "¿Con qué ganas jugarías otra partida ahora mismo?",
+      "min": 1,
+      "max": 5,
+      "minLabel": "Ninguna",
+      "maxLabel": "¡Ya!"
     },
     {
       "id": "improve",
       "type": "text",
       "text": "¿Qué notaste raro o qué cambiarías?",
       "maxLength": 1000,
-      "placeholder": "Un ataque del golem, tu personaje, las pausas, los resultados…"
+      "placeholder": "Un núcleo, una mejora, un texto que no se entendía, el ritmo…"
     }
   ]
 }

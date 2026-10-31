@@ -1,83 +1,174 @@
 {
-  "id": "pre3-0.0.6",
-  "title": "Misiones de la 0.0.6",
-  "intro": "Llega el golem elemental. Ganadle, aprended a leerlo y contadnos qué tal se esquiva. Lo que consigáis se marca solo; lo hecho con trucos no cuenta.",
-  "minGameVersion": "0.0.6-prototype.3",
-  "startsUtc": "2026-10-28T00:00:00+00:00",
-  "endsUtc": "2026-11-11T23:59:00+00:00",
+  "id": "pre3-0.0.7",
+  "title": "Misiones de la 0.0.7",
+  "intro": "Tres personajes, tres formas de jugar. Probadlos todos, usad vuestro núcleo y contadnos si se nota. Lo que consigáis se marca solo; lo hecho con trucos no cuenta.",
+  "minGameVersion": "0.0.7-prototype.3",
+  "startsUtc": "2026-11-01T00:00:00+00:00",
+  "endsUtc": "2026-11-16T23:59:00+00:00",
   "discordWebhookUrl": "pw1:kLQ0Uhc-3w2F9PUteKXDmc0e5NysioDUdomULlWNZL5v_1ZlWz-_ZQTglBhRrLzug1VYsDl9KvujfLn_8Oph6LioNGuUDu9UiKQMJIFLiajXXI3UG6bl9nj_L9vfie7RNTzwYcdbKfeMEhTDn0XFd5fTs0a4kKWbhyM8DyO00jigHFqZonLO",
   "missions": [
     {
+      "id": "jugar-brasa",
+      "title": "Juega una partida con Brasa",
+      "hint": "Elígela en la sala de espera: su ficha te cuenta su pasiva y su núcleo.",
+      "goal": {
+        "event": "lobby_character",
+        "where": {
+          "character": "ember"
+        }
+      },
+      "check": "¿Entendiste qué hace Contagio?"
+    },
+    {
+      "id": "jugar-marea",
+      "title": "Juega una partida con Marea",
+      "hint": "Elígela en la sala y prueba su Gran Ola.",
+      "goal": {
+        "event": "lobby_character",
+        "where": {
+          "character": "tide"
+        }
+      },
+      "check": "¿Se notaba el tirón de la Gran Ola?"
+    },
+    {
+      "id": "jugar-voltio",
+      "title": "Juega una partida con Voltio",
+      "hint": "Elígelo en la sala y encadena una Descarga.",
+      "goal": {
+        "event": "lobby_character",
+        "where": {
+          "character": "volt"
+        }
+      },
+      "check": "¿Se notaba cuándo tu Carga estaba lista?"
+    },
+    {
+      "id": "mejora-personaje",
+      "title": "Coge una mejora de tu personaje",
+      "hint": "Llama eterna, Muro vivo, Corazón de marea, Remolino, Sobretensión o Bobina detonante salen en las ofertas.",
+      "goal": {
+        "event": "upgrade_picked",
+        "where": {
+          "upgrade": [
+            "ember_eternal_flame",
+            "ember_wall_detonate",
+            "tide_tsunami_heart",
+            "tide_whirlpool",
+            "volt_surge",
+            "volt_coil_detonator"
+          ]
+        }
+      },
+      "check": "¿Cambió tu forma de jugar?"
+    },
+    {
+      "id": "slimes",
+      "title": "Acaba con 20 slimes elementales",
+      "hint": "Llevan su propio elemento: detónalos con el tuyo.",
+      "goal": {
+        "event": "enemy_killed",
+        "where": {
+          "enemy": [
+            "fire_slime",
+            "water_slime",
+            "electric_slime"
+          ]
+        },
+        "count": 20,
+        "scope": "set"
+      },
+      "check": "¿Te provocaban reacciones tú solo?"
+    },
+    {
+      "id": "reacciones",
+      "title": "Provoca 40 reacciones",
+      "hint": "Pon tu aura y deja que otro la detone, o detona la suya.",
+      "goal": {
+        "event": "reaction",
+        "where": {
+          "me": [
+            "aura",
+            "detonator",
+            "both"
+          ]
+        },
+        "count": 40,
+        "scope": "set"
+      }
+    },
+    {
+      "id": "duos",
+      "title": "Provocad 15 reacciones en dúo",
+      "hint": "Una reacción con el aura de uno y la detonación de otro.",
+      "allowSolo": false,
+      "goal": {
+        "event": "reaction",
+        "where": {
+          "duo": true,
+          "me": [
+            "aura",
+            "detonator"
+          ]
+        },
+        "count": 15,
+        "scope": "set"
+      }
+    },
+    {
       "id": "vencer-golem",
       "title": "Derrotad al golem elemental",
-      "hint": "Llega al despejar la última oleada. Romped su escudo con reacciones y pegadle mientras está aturdido.",
-      "goal": { "event": "boss_defeated", "where": { "boss": "golem" }, "scope": "match" },
-      "check": "¿Se notaba en qué fase estaba y cuándo tenía escudo?"
-    },
-    {
-      "id": "golem-fase-3",
-      "title": "Llevad al golem a su fase de electricidad",
-      "hint": "Por debajo de un tercio de vida cambia por última vez. Es la fase más agresiva.",
-      "goal": { "event": "boss_phase", "where": { "boss": "golem", "phase": 3 } },
-      "check": "¿El cambio de fase se notaba en el propio golem?"
-    },
-    {
-      "id": "golem-reaccion",
-      "title": "Rematad al golem con una reacción",
-      "hint": "El golpe final tiene que ser una reacción: guardad un aura para el final.",
-      "goal": { "event": "enemy_killed", "where": { "enemy": "golem", "source": "reaction" } }
-    },
-    {
-      "id": "golem-menor",
-      "title": "Derrotad al golem menor",
-      "hint": "Sale hacia el minuto 4:45, con un anuncio en pantalla. Es el ensayo del jefe.",
-      "goal": { "event": "enemy_killed", "where": { "enemy": "lesser_golem" } },
-      "check": "¿Te ayudó a saber cómo romper el escudo del golem?"
-    },
-    {
-      "id": "duos-golem",
-      "title": "Provocad 15 reacciones en dúo",
-      "hint": "Romper el escudo del golem es más rápido con dúos: uno deja el aura y el otro la detona.",
-      "allowSolo": false,
-      "goal": { "event": "reaction", "where": { "duo": true, "me": ["aura", "detonator"] }, "count": 15, "scope": "set" }
+      "hint": "Llega al despejar la última oleada. Usad los núcleos para romper su escudo.",
+      "goal": {
+        "event": "boss_defeated",
+        "where": {
+          "boss": "golem"
+        },
+        "scope": "match"
+      },
+      "check": "¿Ayudó algún núcleo contra él?"
     },
     {
       "id": "reanimar",
       "title": "Reanima a un compañero",
-      "hint": "Quédate a su lado unos segundos. Contra el golem, buscad un momento en que no os apunte.",
+      "hint": "Quédate a su lado mientras está derribado.",
       "allowSolo": false,
-      "goal": { "event": "player_revived", "where": { "by": "me" } }
+      "goal": {
+        "event": "player_revived",
+        "where": {
+          "by": "me"
+        }
+      }
     },
     {
-      "id": "burbuja",
-      "title": "Usa la Burbuja prisión 10 veces",
-      "hint": "Marea la consigue en las ofertas. Al estallar atrapa a todos los que pilla.",
-      "goal": { "event": "ability_cast", "where": { "ability": "tide_bubble" }, "count": 10, "scope": "set" },
-      "check": "¿Marea se siente justa ahora, ni floja ni demasiado fuerte?"
-    },
-    {
-      "id": "internet",
-      "title": "Únete a una partida por internet o VPN",
-      "hint": "Con la IP pública del host o con Radmin VPN. Es donde más se nota el ping.",
-      "goal": { "event": "join_result", "where": { "result": "ok", "target": ["public", "vpn"] } },
-      "check": "¿Esquivar se sentía justo, sin golpes que en tu pantalla habías esquivado?"
-    },
-    {
-      "id": "marca",
-      "title": "¿Sabías a por quién iba el golem?",
-      "hint": "Al saltar, al lanzar rocas o en la tormenta, un círculo bajo los pies marca al jugador al que va.",
+      "id": "nucleo",
+      "title": "¿Usaste tu núcleo y se notó?",
+      "hint": "Cuando el medidor de la derecha se llena: Ignición se enciende sola; Gran Ola y Descarga salen en tu próxima Ola o tu próximo Rayo.",
       "manual": true
     },
     {
-      "id": "pausas",
-      "title": "¿Te dio tiempo a elegir mejoras en las pausas?",
-      "hint": "Al limpiar una oleada sale «¡Oleada despejada!» con al menos 10 s de descanso.",
+      "id": "combo-nucleos",
+      "title": "¿Encadenasteis dos núcleos seguidos?",
+      "hint": "Marea junta al grupo con la Gran Ola y Voltio lo detona con la Descarga. Con Brasa en Ignición, mejor aún.",
+      "allowSolo": false,
       "manual": true
     },
     {
-      "id": "discord",
-      "title": "¿Salía tu partida en Discord?",
-      "hint": "Con Discord abierto, tu perfil enseña si hospedas o te has unido, cuántos sois y cuánto lleváis.",
+      "id": "fichas",
+      "title": "¿Te sirvió la ficha breve del HUD?",
+      "hint": "Pasa el ratón por tu pasiva, una habilidad o el núcleo.",
+      "manual": true
+    },
+    {
+      "id": "sala",
+      "title": "¿Elegiste personaje mirando su ficha?",
+      "hint": "En la sala, la ficha del centro enseña su habilidad inicial, su pasiva, su núcleo y su kit.",
+      "manual": true
+    },
+    {
+      "id": "pausa",
+      "title": "¿Te sirvió el menú de pausa?",
+      "hint": "Pulsa Esc en partida: enseña tu build, el grupo y cómo salir. Solo, para la partida; en grupo, cuando la abrís todos.",
       "manual": true
     }
   ]
