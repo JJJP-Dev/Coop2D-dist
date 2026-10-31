@@ -1,13 +1,13 @@
 {
   "announcements": [
     {
-      "id": "build-0.0.6",
+      "id": "build-0.0.7",
       "level": "info",
-      "title": "¡Ya está la 0.0.6! Llega el golem elemental",
-      "message": "El primer jefe, con tres fases y un escudo en cada una. Además: resultados al acabar, pausas para elegir mejoras, esquivar justo con ping y menú nuevo. Actualiza en Inicio y mirad las misiones de esta versión.",
+      "title": "¡Ya está la 0.0.7! Personajes con identidad",
+      "message": "Elige personaje en la sala de espera: cada uno tiene su pasiva, su núcleo y sus mejoras propias. Además, slimes elementales y un comienzo más ágil. Actualiza en Inicio y mirad las misiones de esta versión.",
       "url": "https://discord.gg/qwxxSMsT9Z",
       "linkText": "Contadlo en Discord",
-      "endsUtc": "2026-11-11T23:59:00+00:00",
+      "endsUtc": "2026-11-16T23:59:00+00:00",
       "dismissible": true
     },
     {
@@ -27,6 +27,18 @@
 
   "links": [
     { "label": "Discord", "url": "https://discord.gg/qwxxSMsT9Z", "icon": "discord" }
+  ],
+
+  "playtests": [
+    {
+      "id": "0.0.7-llamada-1",
+      "title": "Probamos la 0.0.7 en llamada",
+      "description": "Personajes con identidad: pasivas, núcleos y mejoras propias. Actualizad antes y entrad al canal de voz 5 minutos antes.",
+      "startsUtc": "2026-11-01T16:30:00+00:00",
+      "durationMinutes": 120,
+      "requiredVersion": "2D_0.0.7_Prototype3.zip",
+      "discordUrl": "https://discord.gg/qwxxSMsT9Z"
+    }
   ],
 
   "hosting": {
