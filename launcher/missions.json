@@ -1,106 +1,250 @@
 {
-  "id": "pre3-0.0.7",
-  "title": "Misiones de la 0.0.7",
-  "intro": "Tres personajes, tres formas de jugar. Probadlos todos, usad vuestro núcleo y contadnos si se nota. Lo que consigáis se marca solo; lo hecho con trucos no cuenta.",
-  "minGameVersion": "0.0.7-prototype.3",
-  "startsUtc": "2026-11-01T00:00:00+00:00",
-  "endsUtc": "2026-11-16T23:59:00+00:00",
+  "id": "pre3-0.0.8",
+  "title": {
+    "es": "Misiones de la 0.0.8",
+    "en": "0.0.8 missions"
+  },
+  "intro": {
+    "es": "Más difíciles que las de la 0.0.7: dominad a los cuatro personajes, leed a los enemigos y tumbad al golem sin desperdiciar aturdimientos. Se marcan solas; lo hecho con trucos no cuenta.",
+    "en": "Tougher than 0.0.7's: master all four characters, read the enemies and take down the golem without wasting stuns. They tick themselves off; anything done with cheats doesn't count."
+  },
+  "minGameVersion": "0.0.8",
   "discordWebhookUrl": "pw1:kLQ0Uhc-3w2F9PUteKXDmc0e5NysioDUdomULlWNZL5v_1ZlWz-_ZQTglBhRrLzug1VYsDl9KvujfLn_8Oph6LioNGuUDu9UiKQMJIFLiajXXI3UG6bl9nj_L9vfie7RNTzwYcdbKfeMEhTDn0XFd5fTs0a4kKWbhyM8DyO00jigHFqZonLO",
   "missions": [
     {
-      "id": "jugar-brasa",
-      "title": "Juega una partida con Brasa",
-      "hint": "Elígela en la sala de espera: su ficha te cuenta su pasiva y su núcleo.",
-      "goal": {
-        "event": "lobby_character",
-        "where": {
-          "character": "ember"
-        }
+      "id": "polvora",
+      "title": {
+        "es": "Haz saltar Pólvora 5 veces en una partida",
+        "en": "Trigger Hanabi's passive 5 times in one match"
       },
-      "check": "¿Entendiste qué hace Contagio?"
+      "hint": {
+        "es": "Con Hanabi, detona tu fuego justo cuando sale «+3!» con chispas doradas.",
+        "en": "As Hanabi, detonate your fire right when \"+3!\" shows with golden sparks."
+      },
+      "goal": {
+        "event": "passive",
+        "where": {
+          "passive": "passive_polvora",
+          "count": {
+            ">=": 5
+          }
+        },
+        "scope": "match"
+      },
+      "check": {
+        "es": "¿Se veía bien cuándo estaba «a punto»?",
+        "en": "Was it clear when it was primed?"
+      }
     },
     {
-      "id": "jugar-marea",
-      "title": "Juega una partida con Marea",
-      "hint": "Elígela en la sala y prueba su Gran Ola.",
-      "goal": {
-        "event": "lobby_character",
-        "where": {
-          "character": "tide"
-        }
+      "id": "fuego-campo",
+      "title": {
+        "es": "Haz saltar Fuego de campo 8 veces en una partida",
+        "en": "Trigger Nobi's passive 8 times in one match"
       },
-      "check": "¿Se notaba el tirón de la Gran Ola?"
+      "hint": {
+        "es": "Con Nobi, haz que los enemigos prendidos crucen tu rastro: el fuego salta al de al lado.",
+        "en": "As Nobi, get burning enemies to cross your trail: the fire jumps to the next one."
+      },
+      "goal": {
+        "event": "passive",
+        "where": {
+          "passive": "passive_field_fire",
+          "count": {
+            ">=": 8
+          }
+        },
+        "scope": "match"
+      }
     },
     {
-      "id": "jugar-voltio",
-      "title": "Juega una partida con Voltio",
-      "hint": "Elígelo en la sala y encadena una Descarga.",
-      "goal": {
-        "event": "lobby_character",
-        "where": {
-          "character": "volt"
-        }
+      "id": "red",
+      "title": {
+        "es": "Haz saltar la Red 10 veces en una partida",
+        "en": "Trigger Dédalo's passive 10 times in one match"
       },
-      "check": "¿Se notaba cuándo tu Carga estaba lista?"
+      "hint": {
+        "es": "Con Dédalo, provoca reacciones junto a tus relés para recuperar recargas.",
+        "en": "As Dédalo, set off reactions next to your relays to win back cooldowns."
+      },
+      "goal": {
+        "event": "passive",
+        "where": {
+          "passive": "passive_red",
+          "count": {
+            ">=": 10
+          }
+        },
+        "scope": "match"
+      }
     },
     {
-      "id": "mejora-personaje",
-      "title": "Coge una mejora de tu personaje",
-      "hint": "Llama eterna, Muro vivo, Corazón de marea, Remolino, Sobretensión o Bobina detonante salen en las ofertas.",
+      "id": "embrujo",
+      "title": {
+        "es": "Embelesa a 6 enemigos en una partida",
+        "en": "Enthrall 6 enemies in one match"
+      },
+      "hint": {
+        "es": "Con Lorelei, deja tu Señuelo donde vienen los enemigos: quedan embelesados al llegar.",
+        "en": "As Lorelei, drop your Decoy in the enemies' path: they're enthralled when they reach it."
+      },
       "goal": {
-        "event": "upgrade_picked",
+        "event": "passive",
         "where": {
-          "upgrade": [
-            "ember_eternal_flame",
-            "ember_wall_detonate",
-            "tide_tsunami_heart",
-            "tide_whirlpool",
-            "volt_surge",
-            "volt_coil_detonator"
+          "passive": "passive_embrujo",
+          "count": {
+            ">=": 6
+          }
+        },
+        "scope": "match"
+      }
+    },
+    {
+      "id": "golem-limpio",
+      "title": {
+        "es": "Tumbad al golem en menos de 3 min sin aturdirlo de más",
+        "en": "Down the golem in under 3 min without over-stunning it"
+      },
+      "hint": {
+        "es": "En los resultados, «Controlado» por debajo del 25 %. Si lo aturdís sin parar se vuelve INMUNE: guardad los aturdimientos para cuando importan.",
+        "en": "In the results, \"Controlled\" under 25%. Stun it nonstop and it goes IMMUNE: save stuns for when they matter."
+      },
+      "goal": {
+        "event": "match_summary",
+        "where": {
+          "boss_defeated": true,
+          "boss_s": {
+            "<=": 180
+          },
+          "boss_control_s": {
+            "<=": 45
+          }
+        },
+        "scope": "match"
+      },
+      "check": {
+        "es": "¿Os coordinasteis para aturdirlo en el momento justo?",
+        "en": "Did you coordinate to stun it at the right time?"
+      }
+    },
+    {
+      "id": "sin-caer",
+      "title": {
+        "es": "Gana una partida en grupo sin caer ni una vez",
+        "en": "Win a group match without going down once"
+      },
+      "hint": {
+        "es": "De principio a fin, jefe incluido.",
+        "en": "From start to finish, boss included."
+      },
+      "allowSolo": false,
+      "goal": {
+        "event": "match_summary",
+        "where": {
+          "result": "victory",
+          "downed": 0
+        },
+        "scope": "match"
+      }
+    },
+    {
+      "id": "dificil",
+      "title": {
+        "es": "Gana una partida con Nobi o con Dédalo",
+        "en": "Win a match as Nobi or Dédalo"
+      },
+      "hint": {
+        "es": "Los dos tienen dificultad 3 en la sala: piden preparar antes de pegar.",
+        "en": "Both are difficulty 3 in the lobby: they need setting up before they hit."
+      },
+      "goal": {
+        "event": "match_summary",
+        "where": {
+          "result": "victory",
+          "character": [
+            "nobi",
+            "dedalo"
           ]
-        }
+        },
+        "scope": "match"
       },
-      "check": "¿Cambió tu forma de jugar?"
+      "check": {
+        "es": "¿La dificultad de la sala te pareció justa?",
+        "en": "Did the lobby difficulty feel right?"
+      }
     },
     {
-      "id": "slimes",
-      "title": "Acaba con 20 slimes elementales",
-      "hint": "Llevan su propio elemento: detónalos con el tuyo.",
+      "id": "totems",
+      "title": {
+        "es": "Acabad con los tres tótems de una partida",
+        "en": "Destroy all three totems in one match"
+      },
+      "hint": {
+        "es": "Salen a los 4:00, 7:00 y 8:30. Apágalos con una reacción y rematadlos antes que a su grupo.",
+        "en": "They show up at 4:00, 7:00 and 8:30. Shut them off with a reaction and finish them before their pack."
+      },
+      "goal": {
+        "event": "enemy_killed",
+        "where": {
+          "enemy": "totem"
+        },
+        "count": 3,
+        "scope": "match"
+      }
+    },
+    {
+      "id": "elites",
+      "title": {
+        "es": "Remata tú a 3 élites",
+        "en": "Land the killing blow on 3 elites"
+      },
+      "hint": {
+        "es": "Escarabajos diamante (punto débil en la espalda) y slimes madre.",
+        "en": "Diamond beetles (weak spot on the back) and slime mothers."
+      },
       "goal": {
         "event": "enemy_killed",
         "where": {
           "enemy": [
-            "fire_slime",
-            "water_slime",
-            "electric_slime"
-          ]
+            "beetle_diamond",
+            "slime_mother"
+          ],
+          "by": "me"
         },
-        "count": 20,
-        "scope": "set"
-      },
-      "check": "¿Te provocaban reacciones tú solo?"
-    },
-    {
-      "id": "reacciones",
-      "title": "Provoca 40 reacciones",
-      "hint": "Pon tu aura y deja que otro la detone, o detona la suya.",
-      "goal": {
-        "event": "reaction",
-        "where": {
-          "me": [
-            "aura",
-            "detonator",
-            "both"
-          ]
-        },
-        "count": 40,
+        "count": 3,
         "scope": "set"
       }
     },
     {
-      "id": "duos",
-      "title": "Provocad 15 reacciones en dúo",
-      "hint": "Una reacción con el aura de uno y la detonación de otro.",
+      "id": "escudero",
+      "title": {
+        "es": "Remata a 5 autómatas escuderos con una reacción",
+        "en": "Finish off 5 shield automatons with a reaction"
+      },
+      "hint": {
+        "es": "Tras atacar abre la guardia y se carga de electricidad: el agua lo electrocuta.",
+        "en": "After attacking it opens its guard and charges with electricity: water electrocutes it."
+      },
+      "goal": {
+        "event": "enemy_killed",
+        "where": {
+          "enemy": "shield_automaton",
+          "source": "reaction"
+        },
+        "count": 5,
+        "scope": "set"
+      }
+    },
+    {
+      "id": "duo-grande",
+      "title": {
+        "es": "Provocad 10 dúos sobre 4 enemigos o más",
+        "en": "Set off 10 duo reactions on 4+ enemies"
+      },
+      "hint": {
+        "es": "Uno pone su elemento a un grupo y otro lo detona entero.",
+        "en": "One of you coats a pack with your element and the other detonates the lot."
+      },
       "allowSolo": false,
       "goal": {
         "event": "reaction",
@@ -109,67 +253,36 @@
           "me": [
             "aura",
             "detonator"
-          ]
+          ],
+          "targets": {
+            ">=": 4
+          }
         },
-        "count": 15,
+        "count": 10,
         "scope": "set"
       }
     },
     {
-      "id": "vencer-golem",
-      "title": "Derrotad al golem elemental",
-      "hint": "Llega al despejar la última oleada. Usad los núcleos para romper su escudo.",
-      "goal": {
-        "event": "boss_defeated",
-        "where": {
-          "boss": "golem"
-        },
-        "scope": "match"
+      "id": "steam",
+      "title": {
+        "es": "Únete a un amigo por Steam",
+        "en": "Join a friend through Steam"
       },
-      "check": "¿Ayudó algún núcleo contra él?"
-    },
-    {
-      "id": "reanimar",
-      "title": "Reanima a un compañero",
-      "hint": "Quédate a su lado mientras está derribado.",
-      "allowSolo": false,
+      "hint": {
+        "es": "Acepta su invitación o pulsa «Unirse a la partida» en tu lista de amigos de Steam.",
+        "en": "Accept their invite or press \"Join Game\" in your Steam friends list."
+      },
       "goal": {
-        "event": "player_revived",
+        "event": "join_result",
         "where": {
-          "by": "me"
+          "result": "ok",
+          "target": "steam"
         }
+      },
+      "check": {
+        "es": "¿Se sentía igual de al instante que por IP?",
+        "en": "Did it feel as instant as over IP?"
       }
-    },
-    {
-      "id": "nucleo",
-      "title": "¿Usaste tu núcleo y se notó?",
-      "hint": "Cuando el medidor de la derecha se llena: Ignición se enciende sola; Gran Ola y Descarga salen en tu próxima Ola o tu próximo Rayo.",
-      "manual": true
-    },
-    {
-      "id": "combo-nucleos",
-      "title": "¿Encadenasteis dos núcleos seguidos?",
-      "hint": "Marea junta al grupo con la Gran Ola y Voltio lo detona con la Descarga. Con Brasa en Ignición, mejor aún.",
-      "allowSolo": false,
-      "manual": true
-    },
-    {
-      "id": "fichas",
-      "title": "¿Te sirvió la ficha breve del HUD?",
-      "hint": "Pasa el ratón por tu pasiva, una habilidad o el núcleo.",
-      "manual": true
-    },
-    {
-      "id": "sala",
-      "title": "¿Elegiste personaje mirando su ficha?",
-      "hint": "En la sala, la ficha del centro enseña su habilidad inicial, su pasiva, su núcleo y su kit.",
-      "manual": true
-    },
-    {
-      "id": "pausa",
-      "title": "¿Te sirvió el menú de pausa?",
-      "hint": "Pulsa Esc en partida: enseña tu build, el grupo y cómo salir. Solo, para la partida; en grupo, cuando la abrís todos.",
-      "manual": true
     }
   ]
 }

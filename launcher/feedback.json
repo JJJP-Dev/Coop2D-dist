@@ -1,7 +1,13 @@
 {
-  "id": "pre3-0.0.7",
-  "title": "Tu opinión sobre la 0.0.7 · Personajes con identidad",
-  "intro": "Cada personaje tiene ahora su pasiva, su núcleo y sus mejoras propias, y se elige en la sala. Cuéntanos si se nota, si se entiende y qué cambiarías: con lo que digáis ajustamos la siguiente.",
+  "id": "pre3-0.0.8",
+  "title": {
+    "es": "Tu opinión sobre la 0.0.8 · Enemigos con intención",
+    "en": "Your take on 0.0.8 · Enemies with intent"
+  },
+  "intro": {
+    "es": "Enemigos que piden pensar, un golem que ya no se deja aturdir, cuatro personajes nuevos y jugar con amigos lejos al instante. Son unos 3 minutos: con lo que digáis se ajusta la 0.0.9.",
+    "en": "Enemies that make you think, a golem that won't stay stunned, four new characters and instant play with faraway friends. About 3 minutes: your answers shape 0.0.9."
+  },
   "askAfterSession": true,
   "minSessionMinutes": 10,
   "minHoursBetweenPrompts": 12,
@@ -10,381 +16,633 @@
     {
       "id": "overall",
       "type": "rating",
-      "text": "En general, ¿qué tal la partida?",
-      "required": true
+      "required": true,
+      "text": {
+        "es": "En general, ¿qué tal la partida?",
+        "en": "Overall, how was the match?"
+      }
     },
     {
       "id": "how-ended-boss",
       "type": "choice",
-      "text": "¿Cómo acabó tu última partida?",
       "required": true,
+      "text": {
+        "es": "¿Cómo acabó tu última partida?",
+        "en": "How did your last match end?"
+      },
       "options": [
-        "¡Ganamos al golem!",
-        "Caímos contra el golem",
-        "Caímos antes de que llegara el golem",
-        "No la terminamos"
+        {
+          "es": "¡Ganamos al golem!",
+          "en": "We beat the golem!"
+        },
+        {
+          "es": "Caímos contra el golem",
+          "en": "We fell to the golem"
+        },
+        {
+          "es": "Caímos antes de que llegara el golem",
+          "en": "We fell before the golem came"
+        },
+        {
+          "es": "No la terminamos",
+          "en": "We didn't finish it"
+        }
       ]
     },
     {
       "id": "players",
       "type": "choice",
-      "text": "¿Cuántos jugabais?",
+      "text": {
+        "es": "¿Cuántos jugabais?",
+        "en": "How many of you were playing?"
+      },
       "options": [
-        "Solo",
-        "Dos",
-        "Tres",
-        "Cuatro"
+        {
+          "es": "Solo",
+          "en": "Just me"
+        },
+        {
+          "es": "Dos",
+          "en": "Two"
+        },
+        {
+          "es": "Tres",
+          "en": "Three"
+        },
+        {
+          "es": "Cuatro",
+          "en": "Four"
+        }
       ]
     },
     {
-      "id": "character",
-      "type": "choice",
-      "text": "¿Con qué personaje jugaste más?",
-      "options": [
-        "Brasa (fuego)",
-        "Marea (agua)",
-        "Voltio (electricidad)",
-        "Fui cambiando"
-      ]
-    },
-    {
-      "id": "lobby",
-      "type": "multi",
-      "text": "En la sala de espera, ¿qué te sirvió?",
-      "hint": "Marca todo lo que usaste.",
-      "options": [
-        "Ver la ficha del personaje antes de elegir",
-        "Saber quién llevaba cada personaje",
-        "Pulsar el nombre del núcleo para leer su ficha",
-        "Poder repetir personaje",
-        "Nada, elegí sin mirar"
-      ]
-    },
-    {
-      "id": "character-different",
+      "id": "coordination",
       "type": "scale",
-      "text": "¿Se notaba la diferencia entre jugar con un personaje u otro?",
-      "hint": "Por su pasiva, su núcleo y sus mejoras.",
+      "text": {
+        "es": "¿Hacía falta coordinarse para ganar?",
+        "en": "Did you need to coordinate to win?"
+      },
+      "hint": {
+        "es": "Si jugaste solo, piensa en si había que planear.",
+        "en": "If you played solo, think about whether you had to plan."
+      },
       "min": 1,
       "max": 5,
-      "minLabel": "Todos iguales",
-      "maxLabel": "Muy distintos"
+      "minLabel": {
+        "es": "Cada uno a lo suyo",
+        "en": "Everyone did their own thing"
+      },
+      "maxLabel": {
+        "es": "Sin plan, imposible",
+        "en": "Impossible without a plan"
+      }
     },
     {
-      "id": "passive-understood",
-      "type": "choice",
-      "text": "¿Entendiste qué hacía la pasiva de tu personaje?",
-      "hint": "Contagio (Brasa), Oleaje (Marea) o Conductor (Voltio). Está a la izquierda de tus habilidades.",
-      "options": [
-        "Sí, y la notaba en partida",
-        "La entendí, pero no la notaba",
-        "La leí, pero no la entendí",
-        "No sabía que tenía una"
-      ]
-    },
-    {
-      "id": "core-used",
-      "type": "choice",
-      "text": "¿Cuántas veces usaste tu núcleo por partida, más o menos?",
-      "hint": "Ignición (Brasa), Gran Ola (Marea) o Descarga (Voltio): el medidor a la derecha de tus habilidades.",
-      "options": [
-        "Ninguna",
-        "1 o 2",
-        "De 3 a 6",
-        "De 7 a 12",
-        "Más de 12",
-        "No sé qué es el núcleo"
-      ]
-    },
-    {
-      "id": "core-understood",
+      "id": "strategy",
       "type": "multi",
-      "text": "Del núcleo, ¿qué entendiste?",
-      "hint": "Marca todo lo que tengas claro.",
+      "text": {
+        "es": "¿Qué hicisteis a propósito?",
+        "en": "What did you do on purpose?"
+      },
+      "hint": {
+        "es": "Marca todo lo que buscasteis, aunque no saliera.",
+        "en": "Tick everything you tried, even if it didn't work."
+      },
       "options": [
-        "Cómo se llena",
-        "Cuándo está listo",
-        "Qué hace al usarlo",
-        "Que se veía cuando lo usaba otro",
-        "Nada de lo anterior"
+        {
+          "es": "Matar primero al tótem",
+          "en": "Kill the totem first"
+        },
+        {
+          "es": "Rodear al escarabajo o hacerle chocar contra el borde",
+          "en": "Flank the beetle or crash it into the edge"
+        },
+        {
+          "es": "Esperar a que el escudero abriera la guardia",
+          "en": "Wait for the shield automaton to open its guard"
+        },
+        {
+          "es": "Decidir quién detonaba a la slime madre y dónde matarla",
+          "en": "Decide who detonates the slime mother and where to kill it"
+        },
+        {
+          "es": "Romper el escudo del golem antes de ir a por sus escoltas",
+          "en": "Break the golem's shield before its escorts"
+        },
+        {
+          "es": "Repartirnos quién iba a por quién",
+          "en": "Split up who goes after whom"
+        },
+        {
+          "es": "Preparar y detonar entre dos",
+          "en": "Set up and detonate as a pair"
+        },
+        {
+          "es": "Nada, a lo loco",
+          "en": "Nothing, just winging it"
+        }
+      ]
+    },
+    {
+      "id": "enemy-plan",
+      "type": "multi",
+      "text": {
+        "es": "¿Qué enemigo te obligó a cambiar de plan?",
+        "en": "Which enemy made you change your plan?"
+      },
+      "hint": {
+        "es": "Los que no podías atacar sin pensar.",
+        "en": "The ones you couldn't just attack without thinking."
+      },
+      "options": [
+        {
+          "es": "Escarabajo",
+          "en": "Beetle"
+        },
+        {
+          "es": "Escarabajo diamante",
+          "en": "Diamond beetle"
+        },
+        {
+          "es": "Autómata escudero",
+          "en": "Shield automaton"
+        },
+        {
+          "es": "Slime madre",
+          "en": "Slime mother"
+        },
+        {
+          "es": "Tótem",
+          "en": "Totem"
+        },
+        {
+          "es": "Golem menor",
+          "en": "Lesser golem"
+        },
+        {
+          "es": "El golem",
+          "en": "The golem"
+        },
+        {
+          "es": "Ninguno",
+          "en": "None"
+        }
+      ]
+    },
+    {
+      "id": "enemy-unfair",
+      "type": "multi",
+      "text": {
+        "es": "¿Alguno te pareció injusto o confuso?",
+        "en": "Did any of them feel unfair or confusing?"
+      },
+      "options": [
+        {
+          "es": "Escarabajo",
+          "en": "Beetle"
+        },
+        {
+          "es": "Escarabajo diamante",
+          "en": "Diamond beetle"
+        },
+        {
+          "es": "Autómata escudero",
+          "en": "Shield automaton"
+        },
+        {
+          "es": "Slime madre",
+          "en": "Slime mother"
+        },
+        {
+          "es": "Tótem",
+          "en": "Totem"
+        },
+        {
+          "es": "Golem menor",
+          "en": "Lesser golem"
+        },
+        {
+          "es": "El golem",
+          "en": "The golem"
+        },
+        {
+          "es": "Ninguno",
+          "en": "None"
+        }
+      ]
+    },
+    {
+      "id": "diff-hanabi",
+      "type": "scale",
+      "text": {
+        "es": "¿Cómo de difícil es jugar bien con Hanabi?",
+        "en": "How hard is it to play Hanabi well?"
+      },
+      "hint": {
+        "es": "Si no lo jugaste, déjala en blanco.",
+        "en": "If you didn't play them, leave it blank."
+      },
+      "min": 1,
+      "max": 5,
+      "minLabel": {
+        "es": "Muy fácil",
+        "en": "Very easy"
+      },
+      "maxLabel": {
+        "es": "Muy difícil",
+        "en": "Very hard"
+      }
+    },
+    {
+      "id": "diff-nobi",
+      "type": "scale",
+      "text": {
+        "es": "¿Y con Nobi?",
+        "en": "And Nobi?"
+      },
+      "hint": {
+        "es": "Si no lo jugaste, déjala en blanco.",
+        "en": "If you didn't play them, leave it blank."
+      },
+      "min": 1,
+      "max": 5,
+      "minLabel": {
+        "es": "Muy fácil",
+        "en": "Very easy"
+      },
+      "maxLabel": {
+        "es": "Muy difícil",
+        "en": "Very hard"
+      }
+    },
+    {
+      "id": "diff-dedalo",
+      "type": "scale",
+      "text": {
+        "es": "¿Y con Dédalo?",
+        "en": "And Dédalo?"
+      },
+      "hint": {
+        "es": "Si no lo jugaste, déjala en blanco.",
+        "en": "If you didn't play them, leave it blank."
+      },
+      "min": 1,
+      "max": 5,
+      "minLabel": {
+        "es": "Muy fácil",
+        "en": "Very easy"
+      },
+      "maxLabel": {
+        "es": "Muy difícil",
+        "en": "Very hard"
+      }
+    },
+    {
+      "id": "diff-lorelei",
+      "type": "scale",
+      "text": {
+        "es": "¿Y con Lorelei?",
+        "en": "And Lorelei?"
+      },
+      "hint": {
+        "es": "Si no lo jugaste, déjala en blanco.",
+        "en": "If you didn't play them, leave it blank."
+      },
+      "min": 1,
+      "max": 5,
+      "minLabel": {
+        "es": "Muy fácil",
+        "en": "Very easy"
+      },
+      "maxLabel": {
+        "es": "Muy difícil",
+        "en": "Very hard"
+      }
+    },
+    {
+      "id": "balance",
+      "type": "multi",
+      "text": {
+        "es": "¿Algún personaje demasiado fuerte o demasiado flojo?",
+        "en": "Any character too strong or too weak?"
+      },
+      "hint": {
+        "es": "Marca todo lo que quieras.",
+        "en": "Tick as many as you like."
+      },
+      "options": [
+        {
+          "es": "Hanabi, demasiado fuerte",
+          "en": "Hanabi, too strong"
+        },
+        {
+          "es": "Hanabi, floja",
+          "en": "Hanabi, too weak"
+        },
+        {
+          "es": "Nobi, demasiado fuerte",
+          "en": "Nobi, too strong"
+        },
+        {
+          "es": "Nobi, floja",
+          "en": "Nobi, too weak"
+        },
+        {
+          "es": "Dédalo, demasiado fuerte",
+          "en": "Dédalo, too strong"
+        },
+        {
+          "es": "Dédalo, flojo",
+          "en": "Dédalo, too weak"
+        },
+        {
+          "es": "Lorelei, demasiado fuerte",
+          "en": "Lorelei, too strong"
+        },
+        {
+          "es": "Lorelei, floja",
+          "en": "Lorelei, too weak"
+        },
+        {
+          "es": "Todo equilibrado",
+          "en": "All balanced"
+        }
       ]
     },
     {
       "id": "core-feel",
-      "type": "scale",
-      "text": "Al usar tu núcleo, ¿se sentía como un gran momento?",
-      "min": 1,
-      "max": 5,
-      "minLabel": "Ni lo noté",
-      "maxLabel": "¡Mucho!"
-    },
-    {
-      "id": "core-fill-speed",
       "type": "choice",
-      "text": "¿A qué ritmo se llenaba tu núcleo?",
+      "text": {
+        "es": "Tu núcleo (Tamaya, Cerco, Circuito o Canto), ¿cuánto pesaba en la partida?",
+        "en": "Your character's core: how much did it matter in the match?"
+      },
       "options": [
-        "Demasiado lento",
-        "Algo lento",
-        "Bien",
-        "Algo rápido",
-        "Demasiado rápido"
-      ]
-    },
-    {
-      "id": "core-best",
-      "type": "choice",
-      "text": "¿Qué núcleo te pareció más divertido de usar?",
-      "hint": "Aunque fuera de un compañero.",
-      "options": [
-        "Ignición (Brasa)",
-        "Gran Ola (Marea)",
-        "Descarga (Voltio)",
-        "No vi ninguno"
-      ]
-    },
-    {
-      "id": "embers",
-      "type": "choice",
-      "text": "Si jugaste con Brasa o con ella: ¿se notaban las ascuas (su fuego cargado que hace más daño al detonarlo)?",
-      "hint": "Salen como «+1», «+2», «+3» en naranja bajo el enemigo, desde el segundo golpe de Brasa.",
-      "options": [
-        "Sí, y las buscábamos",
-        "Las vi, pero no cambiaban nada",
-        "No las vi",
-        "No jugué con Brasa"
-      ]
-    },
-    {
-      "id": "char-upgrades",
-      "type": "multi",
-      "text": "¿Qué mejoras de personaje cogiste?",
-      "hint": "Marca las que recuerdes.",
-      "options": [
-        "Llama eterna",
-        "Muro vivo",
-        "Corazón de marea",
-        "Remolino",
-        "Sobretensión",
-        "Bobina detonante",
-        "Ninguna, no me salieron"
-      ]
-    },
-    {
-      "id": "char-upgrades-impact",
-      "type": "scale",
-      "text": "¿Cambiaron tu forma de jugar las mejoras de tu personaje?",
-      "hint": "Si no cogiste ninguna, déjala en blanco.",
-      "min": 1,
-      "max": 5,
-      "minLabel": "Nada",
-      "maxLabel": "Muchísimo"
-    },
-    {
-      "id": "upgrade-favorite",
-      "type": "text",
-      "text": "¿Qué mejora te gustó más, y cuál te pareció inútil?",
-      "maxLength": 300,
-      "placeholder": "Remolino me encantó; Sobretensión no se notaba…"
-    },
-    {
-      "id": "texts-clear",
-      "type": "scale",
-      "text": "¿Se entendían las descripciones (mejoras, habilidades, pasiva y núcleo)?",
-      "min": 1,
-      "max": 5,
-      "minLabel": "Nada claras",
-      "maxLabel": "Muy claras"
-    },
-    {
-      "id": "texts-confusing",
-      "type": "multi",
-      "text": "¿Qué textos te costó entender?",
-      "hint": "Marca todo lo que quieras.",
-      "options": [
-        "Las mejoras de las ofertas",
-        "Las habilidades",
-        "La pasiva",
-        "El núcleo",
-        "Las palabras como «aura», «detonar» o «reacción»",
-        "La ficha de la sala",
-        "Ninguno"
-      ]
-    },
-    {
-      "id": "tooltips",
-      "type": "choice",
-      "text": "Al pasar el ratón por tu pasiva, una habilidad o el núcleo sale una ficha breve. ¿La usaste?",
-      "options": [
-        "Sí, y me sirvió",
-        "Sí, pero no aclaraba",
-        "No sabía que existía",
-        "No la necesité"
-      ]
-    },
-    {
-      "id": "auras-readable",
-      "type": "choice",
-      "text": "Debajo de cada enemigo se ve su aura: un bloque de color si es fuerte, solo el nombre si es débil, las ascuas como «+2» y «¡ATURDIDO!» cuando no se mueve. ¿Se leía bien?",
-      "options": [
-        "Sí, de un vistazo",
-        "Más o menos, los enemigos son pequeños",
-        "No me fijaba",
-        "No lo entendía"
-      ]
-    },
-    {
-      "id": "pause-menu",
-      "type": "choice",
-      "text": "¿Usaste el menú de pausa (Esc)?",
-      "hint": "Jugando solo para la partida; en grupo, solo cuando la abrís todos. Enseña tu build, el grupo y cómo salir.",
-      "options": [
-        "Sí, para parar la partida",
-        "Sí, para ver mi build",
-        "Sí, solo para salir",
-        "No lo usé",
-        "No sabía que existía"
-      ]
-    },
-    {
-      "id": "pause-group",
-      "type": "choice",
-      "text": "Si jugabais en grupo: ¿quedaba claro cuándo se paraba la partida y a quién esperaba?",
-      "hint": "El menú dice «Partida parada» o «falta que pausen J2».",
-      "options": [
-        "Sí, se entendía",
-        "Me costó entenderlo",
-        "Preferiría que se parara al abrirla cualquiera",
-        "Jugué solo o no pausé"
-      ]
-    },
-    {
-      "id": "combo",
-      "type": "choice",
-      "text": "¿Llegasteis a encadenar núcleos entre varios (por ejemplo, Gran Ola y justo después Descarga)?",
-      "options": [
-        "Sí, y fue lo mejor de la partida",
-        "Sí, pero sin buscarlo",
-        "Lo intentamos y no salió",
-        "No lo intentamos o jugué solo"
-      ]
-    },
-    {
-      "id": "slimes",
-      "type": "choice",
-      "text": "Ahora salen slimes de fuego, agua y electricidad. ¿Qué te parecieron?",
-      "hint": "Llevan su propio elemento: puedes provocarles una reacción tú solo.",
-      "options": [
-        "Me gustaron, dan juego",
-        "Bien, pero apenas cambian nada",
-        "Molestan o confunden",
-        "No me fijé"
-      ]
-    },
-    {
-      "id": "early-pace",
-      "type": "choice",
-      "text": "Las primeras oleadas ahora no tienen pausa. ¿Qué tal el comienzo?",
-      "options": [
-        "Ágil, bien",
-        "Demasiado rápido",
-        "Todavía lento",
-        "No me fijé"
-      ]
-    },
-    {
-      "id": "breaks",
-      "type": "choice",
-      "text": "Al limpiar una oleada sale «¡Oleada despejada!». ¿Te dio tiempo a elegir mejoras?",
-      "options": [
-        "Sí, en las pausas",
-        "A veces",
-        "No, casi siempre elegía con enemigos encima",
-        "No me fijé en el aviso"
+        {
+          "es": "Era lo mejor de la partida",
+          "en": "It was the best part of the match"
+        },
+        {
+          "es": "Se notaba, pero sin más",
+          "en": "Noticeable, nothing special"
+        },
+        {
+          "es": "Apenas lo notaba",
+          "en": "Barely noticed it"
+        },
+        {
+          "es": "Casi nunca se llenaba",
+          "en": "It hardly ever filled up"
+        },
+        {
+          "es": "No sé qué es",
+          "en": "I don't know what it is"
+        }
       ]
     },
     {
       "id": "boss-difficulty",
       "type": "scale",
-      "text": "¿Qué tal la dificultad del golem?",
-      "hint": "El 3 es un reto justo. Si no llegasteis, déjala en blanco.",
+      "text": {
+        "es": "¿Qué tal la dificultad del golem?",
+        "en": "How hard was the golem?"
+      },
+      "hint": {
+        "es": "El 3 es un reto justo. Si no llegasteis, déjala en blanco.",
+        "en": "3 is a fair challenge. Leave it blank if you didn't reach it."
+      },
       "min": 1,
       "max": 5,
-      "minLabel": "Muy fácil",
-      "maxLabel": "Muy difícil"
+      "minLabel": {
+        "es": "Muy fácil",
+        "en": "Very easy"
+      },
+      "maxLabel": {
+        "es": "Muy difícil",
+        "en": "Very hard"
+      }
     },
     {
-      "id": "balance",
+      "id": "boss-fight",
       "type": "multi",
-      "text": "¿Algo te pareció demasiado fuerte o demasiado flojo?",
-      "hint": "Marca todo lo que quieras.",
+      "text": {
+        "es": "Contra el golem…",
+        "en": "Against the golem…"
+      },
+      "hint": {
+        "es": "Marca lo que sea verdad para ti.",
+        "en": "Tick whatever is true for you."
+      },
       "options": [
-        "Brasa, demasiado fuerte",
-        "Brasa, floja",
-        "Marea, demasiado fuerte",
-        "Marea, floja",
-        "Voltio, demasiado fuerte",
-        "Voltio, floja",
-        "Algún núcleo, demasiado fuerte",
-        "Todo equilibrado"
+        {
+          "es": "Sabía a quién iba (el círculo naranja)",
+          "en": "I knew who it was after (the orange circle)"
+        },
+        {
+          "es": "Notaba cuándo se quedaba INMUNE",
+          "en": "I noticed when it went IMMUNE"
+        },
+        {
+          "es": "Sabíamos con qué elemento romper su escudo",
+          "en": "We knew which element breaks its shield"
+        },
+        {
+          "es": "Sus escoltas nos separaban",
+          "en": "Its escorts split us up"
+        },
+        {
+          "es": "Se hizo largo",
+          "en": "It dragged on"
+        },
+        {
+          "es": "Se hizo corto",
+          "en": "It was over too fast"
+        },
+        {
+          "es": "No llegué al golem",
+          "en": "I didn't reach the golem"
+        }
       ]
     },
     {
-      "id": "dodge-fair",
-      "type": "choice",
-      "text": "Al esquivar avisos y balas, ¿se sentía justo?",
-      "hint": "Sobre todo si jugabas con ping alto o por internet.",
+      "id": "together",
+      "type": "multi",
+      "text": {
+        "es": "¿Qué te sirvió para jugar en grupo?",
+        "en": "What helped you play as a group?"
+      },
       "options": [
-        "Siempre",
-        "Casi siempre",
-        "A veces me daban golpes que había esquivado",
-        "A menudo me daban golpes que había esquivado"
+        {
+          "es": "Las flechas hacia los compañeros",
+          "en": "Arrows pointing to teammates"
+        },
+        {
+          "es": "El panel del grupo (vida y derribados)",
+          "en": "The group panel (health and downed)"
+        },
+        {
+          "es": "Mirar a un compañero mientras estaba derribado",
+          "en": "Watching a teammate while I was downed"
+        },
+        {
+          "es": "La campana y el aviso cuando alguien cae",
+          "en": "The bell and alert when someone goes down"
+        },
+        {
+          "es": "Ver los efectos de los demás más suaves",
+          "en": "Teammates' effects being softer"
+        },
+        {
+          "es": "Nada de esto / jugué solo",
+          "en": "None of these / I played solo"
+        }
       ]
     },
     {
-      "id": "visual",
+      "id": "lag-ip",
+      "type": "scale",
+      "text": {
+        "es": "Si entraste como invitado por IP: ¿lo que hacías se sentía al instante?",
+        "en": "If you joined as a guest over IP: did your actions feel instant?"
+      },
+      "hint": {
+        "es": "Si fuiste anfitrión, jugaste solo o no entraste por IP, déjala en blanco.",
+        "en": "Leave it blank if you hosted, played solo or didn't join over IP."
+      },
+      "min": 1,
+      "max": 5,
+      "minLabel": {
+        "es": "Mucho retraso",
+        "en": "Very laggy"
+      },
+      "maxLabel": {
+        "es": "Al instante",
+        "en": "Instant"
+      }
+    },
+    {
+      "id": "lag-steam",
+      "type": "scale",
+      "text": {
+        "es": "Si entraste como invitado por Steam: ¿lo que hacías se sentía al instante?",
+        "en": "If you joined as a guest through Steam: did your actions feel instant?"
+      },
+      "hint": {
+        "es": "Si fuiste anfitrión, jugaste solo o no entraste por Steam, déjala en blanco.",
+        "en": "Leave it blank if you hosted, played solo or didn't join through Steam."
+      },
+      "min": 1,
+      "max": 5,
+      "minLabel": {
+        "es": "Mucho retraso",
+        "en": "Very laggy"
+      },
+      "maxLabel": {
+        "es": "Al instante",
+        "en": "Instant"
+      }
+    },
+    {
+      "id": "language",
       "type": "multi",
-      "text": "¿Algo se veía mal o raro?",
-      "hint": "Los tamaños del jefe y de algunos dibujos aún se están ajustando.",
+      "text": {
+        "es": "Sobre el idioma del juego…",
+        "en": "About the game's language…"
+      },
       "options": [
-        "Tamaños de personajes o enemigos",
-        "Balas o rocas",
-        "La barra de habilidades o el núcleo",
-        "La sala de espera",
-        "Las fichas que se abren",
-        "Nada"
+        {
+          "es": "Jugué en español",
+          "en": "I played in Spanish"
+        },
+        {
+          "es": "Jugué en inglés",
+          "en": "I played in English"
+        },
+        {
+          "es": "Vi textos sin traducir",
+          "en": "I saw untranslated text"
+        },
+        {
+          "es": "Vi textos que no cabían o se cortaban",
+          "en": "I saw text that didn't fit or was cut off"
+        },
+        {
+          "es": "Alguna traducción sonaba rara",
+          "en": "Some translation sounded odd"
+        }
       ]
     },
     {
       "id": "issues",
       "type": "multi",
-      "text": "¿Tuviste algún problema?",
-      "hint": "Marca todos los que quieras.",
+      "text": {
+        "es": "¿Tuviste algún problema?",
+        "en": "Did you run into any problems?"
+      },
+      "hint": {
+        "es": "Marca todos los que quieras.",
+        "en": "Tick as many as you like."
+      },
       "options": [
-        "Lag o desconexiones",
-        "Entré con la partida empezada y algo se veía mal",
-        "No podía lanzar habilidades con el ratón sobre la barra",
-        "El juego se cerró",
-        "Va lento o a tirones",
-        "Algo no hacía lo que decía su descripción",
-        "El menú de pausa o el botón de salir",
-        "Ninguno"
+        {
+          "es": "Lag o desconexiones",
+          "en": "Lag or disconnects"
+        },
+        {
+          "es": "No pude unirme o invitar por Steam",
+          "en": "I couldn't join or invite through Steam"
+        },
+        {
+          "es": "Me dieron golpes que había esquivado",
+          "en": "I got hit by attacks I had dodged"
+        },
+        {
+          "es": "El juego se cerró",
+          "en": "The game crashed"
+        },
+        {
+          "es": "Va lento o a tirones",
+          "en": "It runs slow or stutters"
+        },
+        {
+          "es": "Algo no hacía lo que decía su descripción",
+          "en": "Something didn't do what its description said"
+        },
+        {
+          "es": "Ninguno",
+          "en": "None"
+        }
       ]
     },
     {
       "id": "again",
       "type": "scale",
-      "text": "¿Con qué ganas jugarías otra partida ahora mismo?",
+      "text": {
+        "es": "¿Con qué ganas jugarías otra partida ahora mismo?",
+        "en": "How keen are you to play another match right now?"
+      },
       "min": 1,
       "max": 5,
-      "minLabel": "Ninguna",
-      "maxLabel": "¡Ya!"
+      "minLabel": {
+        "es": "Ninguna",
+        "en": "Not at all"
+      },
+      "maxLabel": {
+        "es": "¡Ya!",
+        "en": "Right now!"
+      }
     },
     {
       "id": "improve",
       "type": "text",
-      "text": "¿Qué notaste raro o qué cambiarías?",
       "maxLength": 1000,
-      "placeholder": "Un núcleo, una mejora, un texto que no se entendía, el ritmo…"
+      "text": {
+        "es": "¿Qué notaste raro o qué cambiarías?",
+        "en": "What felt off, or what would you change?"
+      },
+      "placeholder": {
+        "es": "Un enemigo, un personaje, el golem, el lag, un texto…",
+        "en": "An enemy, a character, the golem, the lag, a text…"
+      }
     }
   ]
 }
