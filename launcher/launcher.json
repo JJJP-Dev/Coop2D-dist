@@ -1,13 +1,17 @@
 {
   "announcements": [
     {
-      "id": "build-0.0.7",
+      "id": "build-0.0.8",
       "level": "info",
-      "title": "¡Ya está la 0.0.7! Personajes con identidad",
-      "message": "Elige personaje en la sala de espera: cada uno tiene su pasiva, su núcleo y sus mejoras propias. Además, slimes elementales y un comienzo más ágil. Actualiza en Inicio y mirad las misiones de esta versión.",
+      "title": { "es": "¡Ya está la 0.0.8! Enemigos con intención", "en": "0.0.8 is out! Enemies with intent" },
+      "message": {
+        "es": "Cuatro personajes nuevos, un golem que va a por ti y amigos lejos que juegan como si estuvieran al lado. Actualiza en Inicio: hay misiones y encuesta nuevas.",
+        "en": "Four new characters, a golem that comes for you and faraway friends who play as if they were next to you. Update from Home: new missions and survey."
+      },
       "url": "https://discord.gg/qwxxSMsT9Z",
-      "linkText": "Contadlo en Discord",
-      "endsUtc": "2026-11-16T23:59:00+00:00",
+      "linkText": { "es": "Contadlo en Discord", "en": "Tell us on Discord" },
+      "startsUtc": "2026-11-21T00:00:00+00:00",
+      "endsUtc": "2026-12-06T23:59:00+00:00",
       "dismissible": true
     },
     {
@@ -46,7 +50,7 @@
     "notes": "Abre el puerto UDP 7770 en tu router o usad Radmin VPN."
   },
 
-  "theme": "0.0.8",
+  "versionTheme": "0.0.8",
 
   "bugReportWebhookUrl": "pw1:kLQ0Uhc-3w2F9PUteKXDmc0e5NysioDUdomULlWNZL5v_1ZlWz-_ZQTglBhRrLzug1VYsDl9KvujfLn_8Oph6LioNGuUDu9UiKQMJIFLiajXXI3UG6bl9nj_L9vfie7RNTzwYcdbKfeMEhTDn0XFd5fTs0a4kKWbhyM8DyO00jigHFqZonLO"
 }
